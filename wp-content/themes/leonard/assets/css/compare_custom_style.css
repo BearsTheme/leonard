@@ -1,0 +1,56 @@
+body.woocommerce  h1 {
+	color: #ffffff;
+	font-family: open sans;
+	font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+}
+body.woocommerce table {
+	font-family: open sans;
+	font-size: 14px;
+	font-weight: 400;
+}
+body.woocommerce .amount {
+	font-size: 18px;
+	font-weight: 700;
+	color: #e54e5d;
+}
+body.woocommerce del {
+	margin-right: 10px;
+}
+body.woocommerce del .amount {
+	font-size: 14px;
+	font-weight: 400;
+	color: #363636;
+}
+table.compare-list tr.image th, 
+table.compare-list tr.image td, 
+table.compare-list tr.title th, 
+table.compare-list tr.title td, 
+table.compare-list tr.price th, 
+table.compare-list tr.price td {
+	font-size: 14px;
+	font-weight: 400;
+}
+table.compare-list tr.title th,
+table.compare-list tr.title td {
+	font-size: 16px;
+	font-weight: 700;
+}
+body.woocommerce table.compare-list th {
+	font-size: 14px;
+	font-weight: 700;
+	color: #363636;
+	padding-left: 30px;
+}
+body.woocommerce table.compare-list .add-to-cart td a {
+	color: #ffffff;
+	background: #e54e5d;
+	margin: 0;
+	padding: 8px 30px;
+	border: 1px solid #e54e5d;
+}
+body.woocommerce table.compare-list .add-to-cart td a:hover {
+	color: #e54e5d;
+	background: #ffffff;
+}

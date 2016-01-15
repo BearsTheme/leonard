@@ -1,0 +1,558 @@
+/*------------------------------------------------------------------
+[All Style Sidebar Widget]
+
+    1. Widget Search
+	2. Widget Category
+	3. Widget Tags
+
+-------------------------------------------------------------------*/
+/* ==========================================================================
+   [Start] 1. Widget Search
+========================================================================== */
+.searchform,
+.woocommerce-product-search {
+    position: relative;
+    margin-bottom: 15px;
+    &:before {
+	    font-size: 18px;
+	    position: absolute;
+	    right: 10px;
+	    top: 10px;
+	    content: "\f002";
+	    font-family: FontAwesome;
+	}
+	.screen-reader-text {
+	    display: none;
+	}
+	input[type="text"],
+    input[name="s"],{
+	    width: 100%;
+	    margin: 0;
+        height: 50px;
+		line-height: 50px;
+        display: block;
+        @include border-radius(0);
+        box-sizing: border-box;
+        font-style: italic;
+        @extend .font-second;
+        padding: 0 15px;
+	}
+	input[type="submit"] {
+	    position: absolute;
+	    right: 0;
+	    top: 0;
+	    width: 35px;
+	    height: 50px;
+	    line-height: 50px;
+	    background: none;
+	    border: none !important;
+	    text-indent: -99999px;
+	    opacity: 0;
+	    padding: 0;
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.2)!important;
+            opacity: 0.4;
+        }
+	}
+}
+/* ==========================================================================
+   [Start] 2. Widget Search
+========================================================================== */
+
+/* ==========================================================================
+   [Start] 3. Widget Tags
+========================================================================== */
+.tagcloud a {
+    font-size: 13px!important;
+    line-height: 30px;
+    height: 34px;
+    padding: 0 15px;
+    color: #6f6f6f;
+    margin: 0 10px 10px 0;
+    display: inline-block;
+    @include border-radius(0);
+    background-color: transparent;
+    border: 1px solid #ececec;
+    &:hover {
+        border-color: $primary_color;
+        background-color: transparent;
+	}
+}
+/* ==========================================================================
+   [End] 3. Widget Tags
+========================================================================== */
+
+/* ==========================================================================
+   [Start] 4. Instagram
+========================================================================== */
+.tb-instagram-pics {
+	.instagram-item {
+	    margin: 0 0 16px;
+	    padding: 0 8px;
+        a {
+            display: block;
+            position: relative;
+            &:before {
+                content: '';
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: $primary_color;
+                opacity: 0;
+                @include transition(all 200ms ease-in-out);
+            }
+            &:after {
+                content: "\f002";
+                color: #FFF;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                @include transform(translate(-50%, -50%));
+                font-size: 20px;
+                opacity: 0;
+                @include transition(all 200ms ease-in-out);
+                font-family: FontAwesome;
+            }
+            &:hover {
+                &:after, &:before {
+                    opacity: 1;
+                }
+            }
+        }
+	}
+}
+.tb-get-touch li {
+	position: relative;
+	padding-left: 30px;
+	i {
+		font-size: 20px;
+		color: #808080;
+		padding-right: 10px;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}
+/* ==========================================================================
+   [End] 4. Instagram
+========================================================================== */
+
+/* ==========================================================================
+   [Start] 5. Twitter
+========================================================================== */
+.tweets-container {
+    ul {
+        list-style: none inside;
+        margin: 0; padding: 0;
+        li {
+            font-size: 11px;
+            line-height: 18px;
+            margin-bottom: 25px;
+            .jtwt_date {
+                color: #3a3a3a!important;
+                .fa {
+                    padding-right: 18px;
+                }
+            }
+        }
+    }
+}
+/* ==========================================================================
+   [Start] 5. Tb Recent Post
+========================================================================== */
+
+.tb-recent-post {
+    margin-top: 40px;
+    .tb-recent-post-wrapper {
+        margin-left: 0;
+        > li {
+            margin: 0 0 40px;
+            clear: both;
+            line-height: normal;
+            &:last-child {
+                margin: 0;
+            }
+        }
+        .tb-recent-media {
+            width: 70px;
+            max-width: 70px;
+            float: left;
+        }
+        .tb-recent-details {
+            padding-left: 100px;
+            font-size: 14px;
+            &.no-image {
+                padding: 0;
+            }
+            .title {
+                font-size: 16px;
+                margin: 0 0 10px;
+                color: #141414;
+                font-weight: normal;
+                letter-spacing: 0;
+                line-height: normal;
+                a {
+                    color: #141414;
+                }
+            }
+            .date {
+                display: inline-block;
+                .author {
+                    padding-left: 1px;
+                    &:before {
+                        content: "|";
+                        padding-right: 3px;
+                    }
+                }
+            }
+
+            .post-categories {
+                margin: 0;
+                li {
+                    line-height: normal;
+                    a {
+                        @extend .font-second;
+                        font-style: italic;
+                        font-size: 16px;
+                        color: #6f6f6f;
+                    }
+                }
+            }
+
+        }
+    }
+}
+#secondary .tb-recent-post-wrapper {
+	.tb-recent-details .date {
+		color: $primary_color;
+	}
+}
+
+/**
+* Calendar Widget
+*/
+.widget_calendar table {
+	width: 100%;
+    caption {
+        text-align: center;
+        font-weight: bold;
+    }
+	td {
+		text-align: center;
+	}
+}
+
+/**
+* Products Rate
+*/
+.widget_top_rated_products {
+    .product_list_widget {
+        li {
+            overflow: hidden;
+            margin-bottom: 30px !important;
+            a {
+                img {
+                    float: left;
+                    width: 70px;
+                    height: 75px;
+                    margin-right: 30px;
+                }
+                .product-title {
+                    float: left;
+                    color: #141414;
+                    font-size: 12px;
+                    width: calc(100% - 105px);
+                    line-height: normal;
+                    text-transform: uppercase;
+                    letter-spacing: 0.1em;
+                    font-weight: normal;
+					word-wrap: break-word;
+                }
+            }
+            .amount {
+                @extend .font-second;
+                font-size: 18px;
+                font-style: italic;
+                letter-spacing: 0.1em;
+                color: #141414;
+            }
+			ins{
+				text-decoration: none;
+			}
+        }
+    }
+}
+
+/**
+* Filter by price
+*/
+.woocommerce {
+	.widget_price_filter .price_slider_wrapper {
+		position: relative;
+		padding-top: 20px;
+		.price_slider {
+			height: 2px;
+			background: #e5e5e5;
+			margin: 0 8px 30px 5px; 
+			&:before, &:after {
+				content: "";
+				position: absolute;
+				top: -4px;
+				left: -5px;
+				width: 10px;
+				height: 10px;
+				background: #e5e5e5;
+				@include border-radius(10px);
+			}
+			&:after {
+				left: auto;
+				right: -8px;
+			}
+			.ui-slider-range {
+				background: $primary_color;
+				@include transition(all 0.4s ease 0s);
+			}
+			.ui-slider-handle {
+				top: -7px;
+				left: 0;
+				width: 16px;
+				height: 16px;
+				background: $primary_color;
+				@include border-radius(16px);
+			}
+		}
+		.price_slider_amount {
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 36px;
+			letter-spacing: 0.1em;
+			text-align: left;
+			text-transform: uppercase;
+			color: #363636;
+			.price_label {
+				> span {
+					font-weight: 700;
+					color: $primary_color;
+				}
+			}
+			.button {
+				float: right;
+				font-size: 13px;
+				font-weight: 700;
+				letter-spacing: 0.2em;
+				color: #ffffff;
+				background: $primary_color;
+				padding: 10px 15px;
+				@include border-radius(3px);
+				border: 1px solid $primary_color;
+				@include transition(all 0.4s ease 0s);
+				&:hover {
+					background: #363636;
+					border-color: #363636;
+				}
+			}
+		}
+	}
+}
+
+/**
+* News Tabs
+*/
+.widget_ww_news_tabs {
+    .tab-holder .tab-hold {
+        .nav-tabs {
+            overflow: hidden;
+            border-left: 1px solid #ECECEC;
+            border-right: 1px solid #ECECEC;
+            li {
+                background-color: #f2f2f2;
+                border: none;
+                border-top: 2px solid transparent;
+                display: block;
+                float: left;
+                width: 50%;
+                text-align: center;
+                letter-spacing: 0.1em;
+                font-size: 12px;
+                a {
+                    display: block;
+                    border: none!important;
+                }
+                &.active {
+                    background-color: transparent;
+                    border-top-color: $primary_color;
+                }
+            }
+        }
+    }
+    .tab-content {
+        margin: 0;
+        border-width: 0 1px 1px 1px;
+        .tab-pane {
+            padding: 40px 20px 0;
+			@include breakpoint-in(768px,992px){
+				padding-left: 5px;
+				padding-right: 5px;
+			}
+        }
+        .news-list {
+            margin: 0;
+            li {
+                width: 100%;
+                clear: both;
+                overflow: hidden;
+                margin-bottom: 40px;
+                .tb-image {
+                    width: 70px;
+                    height: 70px;
+                    float: left;
+                    + .tb-details {
+                        padding-left: 100px;
+                    }
+                }
+                .tb-details {
+                    line-height: normal;
+                    h4 {
+                        font-size: 16px;
+                        line-height: normal;
+                        font-weight: 400;
+                        letter-spacing: 0;
+                        margin: 0 0 5px;
+                        padding: 0;
+                    }
+                    a {
+                        @extend .font-second;
+                        font-style: italic;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+/*
+* Recent Comments
+*/
+.widget_recent_comments{
+	.recentcomments{
+		color: #c8c8c8;
+	}
+}
+/**
+* Rss Widget
+*/
+.widget_rss{
+    ul li {
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid $primary_color;
+    }
+	.rssSummary{
+		line-height: 30px;
+	}
+}
+
+/* Lastet new, recent post with thumb */
+.wpb_widgetised_column .widget.widget_tb-recent-posts-widget-with-thumbnails{
+    margin-bottom: 0;
+}
+.widget_tb-recent-posts-widget-with-thumbnails{
+    ul{
+        li{
+            display: inline-block;
+            max-width: 370px;
+            overflow: hidden;
+            + li{
+                margin-left: 26px;
+            }
+            .tb-post-title h3{
+                line-height: 18px; margin-top: 19px;
+                letter-spacing: 0; text-transform: capitalize;
+                margin-bottom: 0;
+            }
+            .tb-post-content{
+                p{
+                    color: #6f6f6f;
+                    line-height: 24px;
+                    margin-bottom: 35px;
+                    margin-top: 25px;
+                }
+            }
+        }
+    }
+}
+/*Products list*/
+.widget_products {
+	ul.product_list_widget > li {
+		line-height: 24px;
+		> del > span {
+			font-size: 12px;
+			font-weight: 400;
+			color: #363636 !important;
+			margin-right: 10px;
+		}
+		> span, > ins  > span {
+			text-decoration: none;
+			font-size: 14px;
+			font-weight: 700;
+		}
+	}
+}
+/*Compare widget*/
+.yith-woocompare-widget {
+	.products-list {
+		margin-bottom: 30px !important;
+		border-bottom: 1px solid #ebebeb;
+		> li > a {
+			font-weight: 700;
+			letter-spacing: 0.2em;
+			&.remove {
+				width: 20px;
+				height: 20px;
+				line-height: 20px;
+				text-align: center;
+				color: #363636 !important;
+				padding: 0;
+				border: 1px solid #ebebeb;
+				-webkit-border-radius: 0;
+				border-radius: 0;
+				&:hover {
+					color: $primary_color !important;
+					background: #ffffff;
+				}
+			}
+		}
+	}
+	> a {
+		font-size: 12px !important;
+		font-weight: 700 !important;
+		text-transform: uppercase;
+		letter-spacing: 0.2em;
+		line-height: 18px !important;
+		display: inline-block;
+		padding: 8px 15px;
+		&.clear-all{
+			color: #ffffff;
+			background: #363636;
+			border: 1px solid #363636;
+			@include border-radius(3px);
+			&:hover {
+				background: $primary_color;
+				border-color: $primary_color;
+			}
+		}
+		&.compare {
+			color: #ffffff;
+			background: $primary_color;
+			border: 1px solid $primary_color;
+			@include border-radius(3px!important);
+			&:hover {
+				color: #ffffff;
+				background: #363636 !important;
+				border-color: #363636;
+			}
+		}
+	}
+}

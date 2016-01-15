@@ -1,0 +1,53 @@
+/* TB Carousel */
+/* TB Grid */
+.tb-grid-wraper .tb-grid-filter{
+	width: 100%;
+}
+.tb-grid-wraper .tb-grid-filter li{
+	list-style: none;
+}
+.tb-grid-wraper .tb-grid-filter li a{
+	display: block;
+}
+.tb-grid-masonry {
+  clear: both;
+}
+/* ZO Fancybox & Counter */
+.tb-fancyboxes-wraper.content-align-left, .tb-counter-wraper.content-align-left{
+	text-align: left;
+}
+.tb-fancyboxes-wraper.content-align-right, .tb-counter-wraper.content-align-right{
+	text-align: right;
+}
+.tb-fancyboxes-wraper.content-align-center, .tb-counter-wraper.content-align-center{
+	text-align: center;
+}
+
+
+/* TB Masonry */
+.tb-masonry-wrapper .tb-masonry-item .tb-masonry-inner {
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+/* TB Masonry Loading */
+.pageload-overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+	opacity: 0;
+	z-index: 99999;
+	transition: all .3s ease;
+	-webkit-transition: all .3s ease;
+	background: url('../images/ajax-loader.gif'), rgba(0, 0, 0, 0.6);
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+.tbMasonry-loading .pageload-overlay{
+	visibility: visible;
+	opacity: 1;
+}

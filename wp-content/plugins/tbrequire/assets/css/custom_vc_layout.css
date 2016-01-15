@@ -1,0 +1,56 @@
+.vc_responsive .wpb_row .vc_1w5, .vc_responsive .wpb_row .1w5 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+.vc_responsive .wpb_row .vc_2w5, .vc_responsive .wpb_row .2w5 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+.vc_responsive .wpb_row .vc_3w5, .vc_responsive .wpb_row .3w5 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+.vc_responsive .wpb_row .vc_4w5, .vc_responsive .wpb_row .4w5 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+
+@media (min-width: 768px) {
+	.vc_responsive .wpb_row .vc_1w5, .vc_responsive .wpb_row .1w5 {
+		float: left;
+		width: 20%;
+	}
+	.vc_responsive .wpb_row .vc_2w5, .vc_responsive .wpb_row .2w5 {
+		float: left;
+		width: 40%;
+	}
+	.vc_responsive .wpb_row .vc_3w5, .vc_responsive .wpb_row .3w5 {
+		float: left;
+		width: 60%;
+	}
+	.vc_responsive .wpb_row .vc_4w5, .vc_responsive .wpb_row .4w5 {
+		float: left;
+		width: 80%;
+	}
+}

@@ -1,0 +1,1192 @@
+/*------------------------------------------------------------------
+[All Style Shortcode]
+
+  1. Shortcode Fancy Box
+        2. Shortcode Pie Chart
+  3. Shortcode Team
+        4. Shortcode Testimonial
+  5. Tab
+  6. Counter
+  7. Accordion
+  8. Progress
+  9. Pricing
+  10. Blog
+  11. Images Carousel
+
+-------------------------------------------------------------------*/
+/* ==========================================================================
+   [Start] 1. Shortcode Fancy Box
+========================================================================== */
+.tb-fancy-box-icon i {
+    line-height: normal;
+}
+/*
+----> Fancy Layout 1 Default
+*/
+.tb-fancybox-layout-default {
+    .tb-fancybox-inner {
+        text-align: center;
+        border: 1px solid $primary_color;
+        @include border-radius(10px);
+        padding: 15px 10px;
+        min-height: 230px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        position: relative;
+        &:after {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            @include background-opacity($primary_color, 0.2);
+            @include opacity(0);
+            @include transition(opacity 200ms);
+        }
+        &:hover:after {
+            @include opacity(1);
+            cursor: pointer;
+        }
+        .tb-fancy-box-content-icon i,
+        .tb-fancy-box-image span {
+            display: inline-block;
+            color: $primary_color;
+            text-align: center;
+            font-size: 40px;
+        }
+        .tb-fancy-box-content-icon,
+        .tb-fancy-box-image {
+            margin-bottom: 20px;
+        }
+        .tb-fancy-box-image span {
+            line-height: 100px;
+        }
+        .tb-fancy-box-title {
+            margin: 0 0 15px;
+            color: #333333;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+    }
+}
+
+/* ==========================================================================
+   [End] 1. Shortcode Fancy Box
+========================================================================== */
+
+/* ==========================================================================
+   [Start] 2. Shortcode Pie Chart
+========================================================================== */
+
+/* ==========================================================================
+   [End] 2. Shortcode Pie Chart
+========================================================================== */
+
+/* ==========================================================================
+   [Start] 3. Team
+========================================================================== */
+
+/* ==========================================================================
+   [End] 3. Team
+========================================================================== */
+
+/* ==========================================================================
+   [Start] 4. Testimonial
+========================================================================== */
+
+/* ==========================================================================
+   [End] 4. Testimonial
+========================================================================== */
+
+/* ==========================================================================
+   [Start] 5. Tabs
+========================================================================== */
+.wpb_tabs .ui-tabs.wpb_tour_tabs_wrapper {
+    .wpb_tabs_nav {
+        text-align: center;
+        .ui-state-default {
+            float: none;
+            display: inline-block;
+            padding: 2px 0;
+            margin: 0 1px;
+            a {
+                font-size: 21px;
+                font-weight: 700;
+                background-color: #33b9d4;
+                @extend .bg-effect-sm;
+                color: #fff;
+                line-height: 50px;
+                padding: 0 30px;
+                margin: 0;
+                border: 2px solid #1a9eb9;
+                @include border-radius(4px);
+            }
+            &.ui-tabs-active {
+                a {
+                    border-bottom-color: transparent;
+                    position: relative;
+                    span {
+                        @extend .bg-effect-sm;
+                        border-left: 2px solid #ba2b6f;
+                        border-right: 2px solid #ba2b6f;
+                        bottom: -6px;
+                        content: "";
+                        height: 8px;
+                        left: -2px;
+                        position: absolute;
+                        width: -moz-calc(100% + 4px);
+                        width: -webkit-calc(100% + 4px);
+                        width: -o-calc(100% + 4px);
+                        width: calc(100% + 4px);
+                    }
+                }
+            }
+        }
+    }
+    .wpb_tab.ui-tabs-panel {
+        border: 2px solid #1a9eb9;
+        background-color: #33b9d4;
+        padding: 30px;
+        @extend .bg-effect-lg;
+        @include border-radius(4px);
+        img {
+            border-width: 2px;
+            border-style: solid;
+            @include border-radius(4px);
+        }
+    }
+}
+.vc_tta-container {
+	.vc_tta-tabs.custom-color {
+		border: 1px solid #e5e5e5;
+		.vc_tta-tabs-container {
+			.vc_tta-tabs-list {
+				.vc_tta-tab {
+					a {
+						border: none;
+						color: #141414;
+						background: transparent;
+						font-size: 11px;
+					}
+					&.vc_active{
+						position: relative;
+						&:before {
+							background: $primary_color;
+							bottom: 0;
+							content: "";
+							height: 2px;
+							left: 0;
+							position: absolute;
+							transform: translateX(22%);
+							width: 70%;
+						}
+					}
+				}
+			}
+		}
+		.vc_tta-panels-container {
+			.vc_tta-panels {
+				border: none;
+				background: transparent;
+				.vc_tta-panel-body {
+					font-size: 12px;
+				}
+				.vc_tta-panel-heading {
+					a {
+						font-size: 11px;
+						color: #141414;
+					}
+				}
+				.vc_tta-panel-body {
+					padding: 18px 20px !important;
+				}
+			}
+		}
+	}
+	.vc_tta-tabs.custom-border {
+		.vc_tta-tabs-container {
+			margin-right: 0;
+			.vc_tta-tabs-list {
+				position: relative;
+				&:before {
+					background: #ececec;
+					bottom: 5px;
+					content: "";
+					height: 3px;
+					left: 0;
+					position: absolute;
+					width: 100%;
+				}
+				.vc_tta-tab {
+					a {
+						border: none;
+						color: #141414;
+						background: transparent;
+						font-size: 11px;
+						padding: 14px 60px 20px 0;
+					}
+					&.vc_active{
+						position: relative;
+						&:before {
+							background: $primary_color;
+							bottom: 5px;
+							content: "";
+							height: 3px;
+							left: 0;
+							position: absolute;
+							width: calc(100% - 60px);
+						}
+						&:after {
+							border-left: 10px solid transparent;
+							border-right: 10px solid transparent;
+							border-top: 7px solid #fcc403;
+							bottom: 0;
+							content: "";
+							left: calc((100% - 60px)/2 - 5px);
+							position: absolute;
+						}
+					}
+				}
+			}
+		}
+		.vc_tta-panels-container {
+			.vc_tta-panels {
+				border: none;
+				background: transparent;
+				.vc_tta-panel-body {
+					font-size: 12px;
+				}
+				.vc_tta-panel-heading {
+					a {
+						font-size: 11px;
+						color: #141414;
+					}
+				}
+			}
+		}
+	}
+}
+/* ==========================================================================
+   [End] 5. Tabs
+========================================================================== */
+
+/* ==========================================================================
+   [Start] 6. Counter
+========================================================================== */
+.tb-counter-wraper {
+    .tb-counter-box {
+        position: relative;
+        margin: 0 auto;
+        padding-bottom: 20px;
+        .tb-counter-middle {
+            .tb-counter-icon i {
+                color: $primary_color;
+            }
+            .tb-counter {
+                font-size: 48px;
+                font-weight: 400;
+                line-height: normal;
+                letter-spacing: 0.1em;
+            }
+        }
+
+        .tb-counter-title {
+            margin: 0;
+            font-size: 13px;
+            text-transform: none;
+            @extend .font-second;
+            font-style: italic;
+        }
+    }
+	&.tb-counter-layout-default {
+		.tb-counter-body {
+			.tb-icon {
+				.fa {
+					font-size: 46px;
+					padding-bottom: 20px;
+				}
+			}
+			.tb-counter {
+				font-size: 30px;
+				margin-bottom: 10px;
+			}
+			h3 {
+				@extend .font-second;
+				font-weight: normal;
+				letter-spacing: 0.1em;
+				color: #6f6f6f;
+				font-style: italic;
+			}
+		}
+	}
+}
+/* ==========================================================================
+   [End] 6. Counter
+========================================================================== */
+
+/* ==========================================================================
+   [Start] 7. Accordion
+========================================================================== */
+.wpb_accordion.wpb_content_element {
+    .wpb_accordion_wrapper {
+        .wpb_accordion_section {
+            margin: 0 0 4px;
+        }
+        .wpb_accordion_header {
+            .ui-accordion-header-icon {
+                display: none;
+            }
+            @extend .bg-effect-lg;
+            line-height: 50px;
+            padding: 0;
+            margin: 0;
+            border: 2px solid #1a9eb9;
+            @include border-radius(4px);
+            &.ui-state-active {
+                @include border-radius(4px 4px 0 0);
+            }
+            a {
+                padding: 1em 15px;
+                color: #fff;
+                font-size: 21px;
+                line-height: 25px;
+                font-weight: 700;
+                @include box-shadow(none);
+                i {
+                    font-size: 18px;
+                    padding-right: 12px;
+                    padding-left: 2px;
+                }
+            }
+        }
+        .wpb_accordion_content {
+            padding: 10px 20px !important;
+            border-width: 0 2px 2px 2px;
+            border-style: solid;
+            @include border-radius(0 0 4px 4px);
+        }
+    }
+}
+.vc_tta-container {
+	.vc_tta-accordion.custom-color {
+		.vc_tta-panels-container {
+			.vc_tta-panel {
+				.vc_tta-panel-heading {
+					background: transparent;
+					margin-bottom: 20px;
+					border-radius: 0;
+					.vc_tta-panel-title {
+						font-size: 11px;
+						color: #141414;
+						.vc_tta-controls-icon {
+							left: auto;
+							right: 20px;
+							width: 10px;
+							height: 10px;
+						}
+						a {
+							padding: 18px 20px;
+							color: #141414;
+						}
+					}
+				}
+				.vc_tta-panel-body {
+					background: transparent;
+					border-color: $primary_color;
+					margin-bottom: 20px;
+					margin-top: 20px;
+					padding: 18px 20px !important;
+					font-size: 12px;
+				}
+				&.vc_active{
+					border: 1px solid $primary_color;
+					margin-bottom: 22px;
+					.vc_tta-panel-heading{
+						border: 0 none;
+						margin-bottom: 0;
+					}
+					.vc_tta-panel-body{
+						border: 0 none;
+						margin: 0;
+						padding-top: 0 !important;
+					}
+				}
+			}
+		}
+	}
+}
+/* ==========================================================================
+   [End] 7. Accordion
+========================================================================== */
+
+/* ==========================================================================
+   [Start] 8. Progress
+========================================================================== */
+.tb-progress-wraper {
+    .progress .progress-bar {
+        transition-duration: 1s;
+    }
+}
+.tb-progress-layout-default {
+    padding-top: 40px;
+    .tb-progress-main {
+        &.bar-icon {
+            padding-left: 50px;
+            position: relative;
+        }
+        .tb-progress-icon {
+            position: absolute;
+            left: 0;
+            i {
+                color: #8f8f8f;
+                font-size: 34px;
+            }
+        }
+        .tb-progress {
+            overflow: visible;
+            background-color: $primary_color;
+            border: 2px solid $primary_color;
+            height: 38px;
+            width: 100%;
+            position: relative;
+            margin: 0 0 10px;
+            @include box-shadow(none);
+            .tb-progress-title {
+                position: absolute;
+                top: 50%;
+                left: 15px;
+                font-size: 18px;
+                font-weight: 700;
+                color: #fff;
+                z-index: 1;
+                @include transform(translate(0px, -50%));
+            }
+            @include border-radius(3px);
+            .progress-bar {
+                width: 20%;
+                overflow: visible;
+                @extend .bg-effect-lg;
+                @include box-shadow(none);
+                background-color: $primary_color;
+                line-height: 40px;
+                text-align: right;
+                padding: 0 15px;
+                span {
+                    color: #fff;
+                    font-size: 15px;
+                    font-weight: 700;
+                    position: absolute;
+                    right: -44px;
+                    top: -39px;
+                    height: 29px;
+                    line-height: 28px;
+                    padding: 0 8px;
+                    @include border-radius(4px);
+                    &:before {
+                        position: absolute;
+                        height: 0;
+                        width: 0;
+                        content: "";
+                        border-width: 5px;
+                        border-style: solid;
+                        bottom: -10px;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+/* ==========================================================================
+   [End] 8. Progress
+========================================================================== */
+
+/* ==========================================================================
+   [Start] 9. Pricing
+========================================================================== */
+.tb-grid-pricing {
+    .tb-pricing-item {
+        .tb-pricing-inner {
+            text-align: center;
+            border: 1px solid #ececec;
+            @include transition(all 200ms ease-in-out);
+            .tb-pricing-meta-wrap {
+                .option-item {
+                    font-size: 12px;
+                    line-height: 48px;
+                    .fa {
+                        padding-left: 20px;
+                        color: $primary_color;
+                    }
+                }
+                margin-bottom: 40px;
+            }
+            .tb-pricing-price-wrap {
+                color: #141414;
+                margin-bottom: 40px;
+                .price {
+                    font-size: 50px;
+                }
+                sup {
+                    font-size: 18px;
+                    top: -25px;
+                }
+                sub {
+                    font-size: 14px;
+                    font-style: italic;
+                    @extend .font-second;
+                    text-transform: lowercase;
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   [End] 9. Pricing
+========================================================================== */
+
+/* ==========================================================================
+   [Start] 10. Tb Grid
+========================================================================== */
+.tb-grid-wrapper {
+    .tb-grid-filter {
+        margin-bottom: 40px;
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none inside;
+            text-align: center;
+            li {
+                display: inline-block;
+                margin-bottom: 16px;
+                a {
+                    border: 1px solid #dedede;
+					font-size: 10px;
+					font-weight: 600;
+					padding: 5px 25px;
+					text-transform: uppercase;
+					letter-spacing: 0.1em;
+                    &.active, &:hover {
+                        border-color: $primary_color;
+                    }
+                }
+				+ li{
+					margin-left: 16px;
+				}
+            }
+        }
+    }
+    &.no-padding {
+        .tb-grid {
+            .tb-grid-item {
+                padding: 0;
+                margin: 0;
+				.tb-team-wrap {
+					padding-bottom: 0;
+				}
+            }
+        }
+    }
+	&.tb-grid-team .tb-grid-item {
+		.tb-team-inner {
+			position: relative;
+			.tb-team-image > img {
+				width: 100%;
+				height: auto;
+			}
+			.tb-team-overlay {
+				@include transition(all .3s ease);
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(0,0,0,0.8);
+				opacity: 0;
+				transform: scale(.8);
+				-webkit-transform: scale(.8);
+				.tb-team-info {
+					bottom: 0;
+					left: 0;
+					position: absolute;
+					width: 100%;
+					padding: 20px 60px;
+					h2.tb-team-title {
+						font-size: 24px;
+						font-weight: 700;
+						line-height: 24px;
+						color: #ffffff;
+						margin-bottom: 5px;
+					}
+					.tb-team-position {
+						font-size: 12px;
+						font-weight: 400;
+						line-height: 24px;
+						color: $primary_color;
+						span::before {
+							background: $primary_color;
+							content: "";
+							display: inline-block;
+							height: 1px;
+							margin-right: 10px;
+							vertical-align: middle;
+							width: 20px;
+						}
+					}
+					.tb-team-socials {
+						margin-top: 40px;
+						> ul {
+							margin: 0;
+							padding: 0;
+							> li {
+								display: inline-block;
+								margin-right: 30px;
+								&:last-child {
+									margin: 0;
+								}
+								> a {
+									font-size: 18px;
+									color: #ffffff;
+									&:hover {color: $primary_color;}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		&:hover {
+			.tb-team-inner .tb-team-overlay {
+				opacity: 1;
+				transform: scale(1);
+				-webkit-transform: scale(1);
+			}
+		}
+	}
+	
+}
+/* ==========================================================================
+   [End] 10. Tb Grid
+========================================================================== */
+
+/* ==========================================================================
+   [Start] 10. Tb Masonry
+========================================================================== */
+.tb-masonry-wrapper {
+    .tb-masonry-filter {
+        margin-bottom: 40px;
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none inside;
+            text-align: center;
+            li {
+                display: inline-block;
+                margin-right: 16px;
+                margin-top: 15px;
+                a {
+                    display: block;
+                    font-size: 10px;
+                    padding: 5px 25px;
+                    border: 1px solid #DEDEDE;
+                    text-transform: uppercase;
+                    font-weight: normal;
+                    &.active, &:hover {
+                        border-color: $primary_color;
+                    }
+                }
+            }
+        }
+    }
+}
+/* ==========================================================================
+   [End] 10. Tb Masonry
+========================================================================== */
+
+/* ==========================================================================
+   [Start] 11. Images Carousel
+========================================================================== */
+.wpb_images_carousel {
+    .vc_item {
+        text-align: center;
+    }
+    &.no-padding {
+
+    }
+    .vc_images_carousel.vc_per-view-more .vc_carousel-slideline .vc_carousel-slideline-inner > .vc_item > .vc_inner {
+        padding: 0;
+        margin: 0;
+    }
+    &.overlay {
+        .vc_item, .slick-slide  {
+            img {
+                opacity: 0.6;
+            }
+            &:hover {
+                img {
+                    opacity: 1;
+                }
+            }
+        }
+
+    }
+    &.green {
+        .slick-dots li.slick-active button::before {
+            color: $primary-color ;
+        }
+    }
+    .slick-dots li.slick-active button::before {
+        color: $primary_color;
+    }
+    .vc_slide {
+        .vc_carousel-control {
+            border-radius: 100%;
+            border: 2px solid #FFF;
+            display: block;
+            height: 50px;
+            opacity: 1;
+            width: 50px;
+            line-height: 47px;
+            margin: 0;
+            top: 50%;
+            color: #fff;
+            text-shadow: none;
+            @include transform(translate(0px, -50%));
+            @include text-shadow(none);
+            font-size: 22px;
+            &:hover {
+                background-color: rgba(255,255,255, 0.5);
+            }
+            span {
+                display: none;
+            }
+            &.vc_left {
+                left: 15px;
+                &:before {
+                    content: "\f053";
+                    font-family: FontAwesome;
+                }
+            }
+            &.vc_right {
+                right: 15px;
+                &:before {
+                    content: "\f054";
+                    font-family: FontAwesome;
+                }
+            }
+        }
+    }
+}
+@include breakpoint-max(768px){
+	.wpb_images_carousel{
+		.vc_images_carousel{
+			.vc_carousel-inner{
+				.vc_carousel-slideline{
+					width: 100% !important;
+					.vc_carousel-slideline-inner{
+						.vc_item{
+							width: 100% !important;
+							height: auto !important;
+							+ .vc_item{
+								margin-top: 50px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.wpb_images_carousel.about-us-carousel-2{
+		.vc_images_carousel .vc_carousel-inner .vc_carousel-slideline .vc_carousel-slideline-inner .vc_item + .vc_item{
+			margin-top: 0px;
+		}
+	}
+}
+@include breakpoint-max(992px){
+	.wpb_images_carousel{
+		.tb_images_carousel-wrap{
+			text-align: center;
+			.tb_images_carousel > div + div{
+				margin-top: 50px;
+			}
+		}
+	}
+}	
+/* ==========================================================================
+   [End] 11. Images Carousel
+========================================================================== */
+
+
+/** [Start]Heading page
+============================*/
+.heading{
+    h1, h2, h3, h4, h5, h6{
+        text-transform: uppercase;
+    }
+}
+/** [End]Heading page
+============================*/
+
+/** [Start]List shortcode page
+============================*/
+.list{
+    a{
+        color: #868686;
+        padding-left: 20px;
+    }
+    li{
+        list-style: none inside;
+        &:before {
+            content: "\f067";
+            height: 1px;
+            color: $primary_color;
+            font: normal normal normal 14px/1 FontAwesome;
+        }
+    }
+}
+.list-right{
+    a{
+        color: #868686;
+        padding-left: 20px;
+    }
+    li{
+        list-style: none inside;
+        &:before {
+            content: "\f111";
+            height: 1px;
+            color: $primary_color;
+            font-size: 10px ! important;
+            font: normal normal normal 14px/1 FontAwesome;
+        }
+    }
+}
+/** [End]List shortcode page*/
+
+/** [Start]Heading Accordion Toggle page*/
+.wpb_accordion_section {
+    .wpb_accordion_header {
+        background: #f8f8f8;
+        border: none ! important;
+        border-radius: 0 ! important;
+        &:hover{
+            background: $primary_color ! important;
+        }
+        a {
+            font-weight: 400;
+            letter-spacing: 2px;
+            font-size: 14px ! important;
+            color:#333 ! important;
+            text-transform: uppercase ! important;
+        }
+
+        &.ui-state-active {
+            background: $primary_color ! important;
+            border-radius: 0 ! important;
+        }
+    }
+
+    .wpb_accordion_content {
+        border: none ! important;
+        padding: 0 ! important;
+    }
+}
+
+/** [End]Heading Accordion Toggle page*/
+
+/** [Start] charts page*/
+.vc_pie_chart {
+    .vc_pie_wrapper {
+        margin-bottom: 40px ! important;
+    }
+}
+
+.vc_progress_bar {
+    .vc_single_bar {
+        margin-bottom: 60px;
+        border-radius: 0;
+        background: none!important;
+        box-shadow: none!important;
+        .vc_bar_wrap {
+            background: #909090 none repeat scroll 0 0;
+            border-radius: 3px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+            width: 100%;
+            height: 15px;
+            position: relative;
+            .vc_bar {
+                border-radius: 0;
+            }
+        }
+        .vc_label {
+            font-size: 11px;
+            padding-left: 0 !important;
+			padding-right: 0 !important;
+            color: #333333 ! important;
+            .vc_percent{
+                float: right;
+                font-size: 11px;
+				&:after {
+					color: #909090;
+					content: "\f0d7";
+					font-family: FontAwesome;
+					font-size: 16px;
+					margin-left: 10px;
+				}
+            }
+        }
+    }
+}
+/** [End]charts page*/
+
+/** [Start] text highlight page*/
+.highlight1{
+    mark{
+        background: $primary_color;
+    }
+}
+.highlight2{
+    mark{
+        background: $primary_color;
+        color: #fff;
+    }
+}
+.highlight3{
+    mark{
+        background: #fff;
+        color: #808080;
+    }
+}
+.highlight4{
+    mark{
+        background: $primary_color;
+        color: #333;
+    }
+}
+/** [End]charthighlights page*/
+
+
+/** Custome Heading
+================================================*/
+.tb-custom-heading {
+	.center {
+		text-align: center;
+	}
+	.left {
+		text-align: left;
+	}
+	.right {
+        float: none;
+		text-align: right;
+	}
+}
+/** Carousel Wrap
+================================================*/
+.tb-carousel-purchase {
+	.vc_btn3-container {
+		.vc_btn3 {
+			background: #fff;
+			display: inline-block;
+			width: 100%;
+			@include breakpoint-in(768px,800px){
+				padding: 16px 26px !important;
+			}
+			@include breakpoint-in(800px,980px){
+				padding: 16px 30px !important;
+			}
+			&:hover {
+				color: #fff !important;
+				background: $primary_color;
+			}
+		}
+	}
+}
+.tb-carousel-wrap {
+	.tb-carousel-filter {
+		ul {
+			margin-bottom: 40px;
+			text-align: center;
+			padding: 0;
+			list-style: none;
+			li {
+				display: inline-block;
+				margin: 0 20px;
+				a {
+					padding: 8px 10px;
+					text-transform: uppercase;
+                    display: block;
+					color: #363636;
+					font-weight: bold;
+					font-size: 13px;
+					letter-spacing: 0.1em;
+					line-height: 24px;
+					position: relative;
+					@include transition(all .3s ease);
+					&:before, &:after{
+						content: "";
+						position: absolute;
+						bottom: 0px;
+						left: 50%;
+						width: 0;
+						height: 1px;
+						background: $primary-color;
+						@include transform(translate(-50%, 0px));
+						@include transition(all .3s ease);
+					}
+					&:after{
+						height: 2px;
+						bottom: -5px;
+					}
+					&:hover, &.active {
+						color: $primary_color;
+						&:before, &:after{
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+/** Features
+================================================*/
+.list-icon, .list-primary, .list-number {
+	li{
+		font-size: 12px;
+		margin-bottom: 15px;
+		.fa {
+			font-size: 18px;
+		}
+	}
+}
+
+.list-icon {
+	list-style: none;
+	padding-left: 0;
+	.fa {
+		background: #909090;
+		border-radius: 50%;
+		color: #fff;
+		font-size: 15px;
+		height: 25px;
+		line-height: 22px;
+		text-align: center;
+		vertical-align: middle;
+		width: 25px;
+		margin-right: 14px;
+	}
+}
+.list-primary {
+	list-style: none;
+	padding-left: 0;
+	.fa {
+		color: $primary_color;
+		margin-right: 24px;
+	}
+}
+.list-number {
+	list-style: none;
+	padding-left: 0;
+	counter-reset: numList;
+	overflow: hidden;
+	li{
+		padding-left: 48px;
+		&:before {
+			border: 1px solid #ededed;
+			border-radius: 50%;
+			color: #141414;
+			content: counter(numList);
+			counter-increment: numList;
+			height: 25px;
+			left: 17px;
+			line-height: 25px;
+			position: absolute;
+			text-align: center;
+			width: 25px;
+		}
+	}
+}
+
+
+/**
+* VC Images Carousel
+* Slick Slider
+**/
+.tb_images_carousel-wrap {
+    .tb_images_carousel {
+        .slick-list {
+            .slick-slide {
+                text-align: center;
+                outline: none;
+                img {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+    .slick-slider {
+        .slick-arrow {
+            width: 35px;
+            height: 35px;
+            text-align: center;
+            line-height: 35px;
+            z-index: 99;
+            background-color: #FFF;
+            &:before {
+                color: #141414;
+                line-height: inherit;
+            }
+            &.slick-prev {
+                left: 25px;
+            }
+            &.slick-next {
+                right: 25px;
+            }
+        }
+    }
+    .tb_images_carousel_nav {
+        &.slick-slider {
+            .slick-arrow {
+                text-align: center;
+                z-index: 99;
+                top: 0;
+                width: 30px;
+                background-color: $primary_color;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                &:before {
+                    color: #FFF;
+                    line-height: inherit;
+                }
+                &.slick-prev {
+                    left: 0;
+                }
+                &.slick-next {
+                    right: 0;
+                }
+            }
+            .slick-slide {
+                padding: 0 5px;
+                &.slick-current {
+                    span {
+                        position: relative;
+                        display: block;
+                        &:before {
+                            content: '';
+                            @include background-opacity($primary_color, 0.8);
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

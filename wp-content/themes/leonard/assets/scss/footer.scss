@@ -1,0 +1,202 @@
+$footer_fontsize_private: 14px;
+
+/* ==========================================================================
+    Start Style Footer
+========================================================================== */
+footer {
+    position: relative;
+
+}
+#tb-footer-top {
+    position: relative;
+    font-size: $footer_fontsize_private;
+    /* line-height: 30px; */
+    overflow: hidden;
+	.footer-first h6{
+		color: $primary_color;
+	}
+	.wg-title {
+        font-size: $footer_fontsize_private;
+        position: relative;
+        text-transform: uppercase;
+        
+        margin: 15px 0 32px;
+        line-height: normal;
+        letter-spacing: 2px;
+    }
+    ul.menu {
+        padding: 0; margin: 0;
+        list-style: none inside;
+        li {
+            font-size: $footer_fontsize_private;
+            line-height: 35px;
+            /* text-transform: uppercase; */ 
+            &:first-child {
+                margin-top: -9px;
+            }
+            
+            a{
+	            padding-left: 26px;
+	            position: relative;
+	            
+	            &:after{
+		            content: "";
+		            position: relative;
+		            position: absolute;
+		            left: 0;
+		            top: calc( 50% - 3px );
+		            width: 6px;
+		            height: 6px;
+		            border: solid;
+		            border-width: 1px 1px 0 0;
+		            transform: rotate(  45deg );
+		            -webkit-transform: rotate(  45deg );
+		            @include transition(all .3s);
+	            }
+	            &:hover:after{
+		            left: 8px;
+	            }
+            }
+        }
+    }
+    .widget{
+	    .textwidget{
+		    ul{
+		    	padding-left: 0;
+		    	&.info-contact{
+			    	margin-top: 30px;
+			    	li {
+				    	.theme-icon{
+						    display: inline-block;
+						    vertical-align: middle;
+						    margin-right: 20px;
+						    width: 36px;
+						    height: 36px;
+						    line-height: 36px;
+						    text-align: center;
+						    svg{
+							    opacity: .6;
+							    @include transition(all 300ms linear 0ms);
+						    }
+					    }
+					    &:hover{
+					    	.theme-icon{
+							    svg{
+								    opacity: 1;
+							    }
+							}
+						}
+					    > span{
+						    display: inline-block;
+						    /* line-height: normal; */
+						    max-width: calc(100% - 60px);
+						    vertical-align: middle;
+					    }
+			    	}
+		    	}
+			    li{
+				    list-style: none;
+				    margin-bottom: 25px;
+				    &:last-child{
+					    margin: 0;
+				    }
+			    }
+		    }
+	    }
+    }
+}
+#tb-footer-bottom {
+	#tb-footer-bottom-inner{
+		border-top: 1px solid rgba(255,255,255, .1);
+		a.color-white{
+	    	color: #FFF;
+	    	&:hover{
+		    	color: rgba(255,255,255,.7);
+	    	}
+    	}
+	}
+	.tb-method {
+		margin-bottom: 20px;
+		> a {
+			display: inline-block;
+			font-size: 24px;
+			font-weight: 400;
+			color: rgba(255,255,255,.5);
+			margin: 0 8px;
+			&:hover {
+				color: #f4a137;
+			}
+		}
+	}
+    .tb-copyright {
+		font-size: 12px;
+		line-height: 24px;
+		color: rgba(255,255,255,.5);
+		> a {
+			font-size: 13px;
+			color: #fff;
+			&:hover {
+				color: #f4a137;
+			}
+		}
+	}
+}
+/* End Widget Categories */
+footer.entry-meta {
+    font-size: 13px;
+    line-height: 1.846153846;
+    color: #757575;
+    margin: 0;
+    text-align: center;
+    clear: both;
+}
+/* Back To Top */
+.back_to_top {
+    color: #cdcdcd;
+    height: auto;
+    position: fixed;
+    bottom: -40px;
+    margin: 0;
+    z-index: 10000;
+    -webkit-transition: all 1s ease 1s;
+    -moz-transition: all 1s ease 1s;
+    -o-transition: all 1s ease 1s;
+    transition: all 1s ease 1s;
+    right: 25px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer;
+    @include border-radius(50%);
+    border: 2px solid #e8e8e8;
+    &.on {
+        opacity: 1;
+        filter: alpha(opacity=100);
+        display:block;
+        bottom:10px;
+    }
+}
+#back_to_top span {
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    text-decoration: none;
+    @include transition(all .2s ease 0s);
+    @include border-radius(50%);
+    background:rgba(0, 0, 0, 0.10);
+    display: block;
+    text-align: center;
+    color: #b0b0b0;
+    &:hover {
+        background:rgba(0, 0, 0, 0.60);
+        color:#fff;
+    }
+    i {
+        font-size: 15px;
+        @include transition(all .2s ease 0s);
+        line-height: 42px;
+    }
+}
+/* End Back To Top */
+/* ==========================================================================
+    End Style Footer
+========================================================================== */
