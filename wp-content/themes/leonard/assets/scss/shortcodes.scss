@@ -512,7 +512,7 @@
         .tb-pricing-inner {
             text-align: center;
             border: 1px solid #ececec;
-            @include transition(all 200ms ease-in-out);
+            @include transition(all .4s ease);
             .tb-pricing-meta-wrap {
                 .option-item {
                     font-size: 12px;
@@ -599,7 +599,7 @@
 				height: auto;
 			}
 			.tb-team-overlay {
-				@include transition(all .3s ease);
+				@include transition(all .4s ease);
 				position: absolute;
 				top: 0;
 				left: 0;
@@ -1024,7 +1024,7 @@
 					letter-spacing: 0.1em;
 					line-height: 24px;
 					position: relative;
-					@include transition(all .3s ease);
+					@include transition(all .4s ease);
 					&:before, &:after{
 						content: "";
 						position: absolute;
@@ -1034,7 +1034,7 @@
 						height: 1px;
 						background: $primary-color;
 						@include transform(translate(-50%, 0px));
-						@include transition(all .3s ease);
+						@include transition(all .4s ease);
 					}
 					&:after{
 						height: 2px;

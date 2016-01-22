@@ -49,7 +49,7 @@
     <div class="tb-header-bottom-wrap">
     	<div class="row">
 	        <div class="container tb-vmiddle">
-		        <div id="tb-header-navigation" class="col-xs-12 col-sm-12 col-md-12 col-lg-9">
+		        <div id="tb-header-navigation" class="col-md-11 col-lg-9">
 		            <nav id="site-navigation" class="main-navigation">
 		                <?php
 		                $attr = array(
@@ -72,7 +72,7 @@
 		                wp_nav_menu($attr); ?>
 		            </nav>
 		        </div><!--
-				--><div id="tb-header-right-menu" class="hidden-xs hidden-sm hidden-md col-xs-12 col-sm-3 col-md-3 col-lg-3">
+				--><div id="tb-header-right-menu" class="hidden-xs hidden-sm col-md-1 col-lg-3">
 					<?php if (is_active_sidebar('header-right-menu')) dynamic_sidebar('header-right-menu'); ?>
 				</div>
 	        </div>

@@ -50,12 +50,12 @@ add_action('woocommerce_after_single_product', 'woocommerce_output_related_produ
  * @hooked woocommerce_template_single_sharing - 50
  */
 
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
+ 
 add_action( 'woocommerce_template_single_rating', 'woocommerce_template_single_rating', 10 );
 add_action( 'woocommerce_template_single_price', 'woocommerce_template_single_price', 10 );
+add_action( 'woocommerce_template_single_sharing', 'woocommerce_template_single_sharing', 50 );
 
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
-
-add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 7 );
 /* function link compare */
 function tb_add_compare_link( $product_id = false, $args = array() ) {
 	extract( $args );

@@ -71,7 +71,7 @@ Menu Default
                     display: inline-block;
                     border-bottom: 0;
                     white-space: nowrap;
-                    @include transition(all 0.4s ease 0s);
+                    @include transition(all .4s ease);
                 }
             }
         }
@@ -79,7 +79,7 @@ Menu Default
             > li {
 				display: inline-block;
                 vertical-align: top;
-                @include transition(all 0.4s ease 0s);
+                @include transition(all .4s ease);
                 > a {
                     position: relative;
                     text-align: center;
@@ -87,13 +87,13 @@ Menu Default
                     line-height: normal;
                     font-weight: 700;
 					letter-spacing: 0.2em;
-                    @include transition(all 0.4s ease 0s);
+                    @include transition(all .4s ease);
                     i {
                         display: block;
                         width: 100%;
                         line-height: 0;
                         margin-bottom: 6px;
-                        @include transition(all 0.4s ease 0s);
+                        @include transition(all .4s ease);
                         + .menu-title {
                             @include transform(translateY(25px));
                             display: block;
@@ -107,7 +107,7 @@ Menu Default
 						width: 0;
 						height: 1px;
 						background: $menu_color_first_level;
-						@include transition(all 0.4s ease 0s);
+						@include transition(all .4s ease);
 						@include transform(translateX(-50%));
 					}
 					&:after {
@@ -127,7 +127,7 @@ Menu Default
                         background-color: #ffffff;
 						padding: 20px;
 						border-bottom: 2px solid $primary_color;
-                        @include transition(all 0.4s ease 0s);
+                        @include transition(all .4s ease);
 						&.current-menu-parent, &.current-menu-ancestor{
 							> a{
 								color: $primary_color;
@@ -301,7 +301,7 @@ Menu Default
 					width: 60%;
 					border-left: 1px solid #cecece;
 					h3.wg-title {
-						font-family:Playfair Display;
+						font-family: Playfair Display;
 						font-size: 16px;
 						font-weight: 700;
 						line-height: 24px;
@@ -312,123 +312,84 @@ Menu Default
 						width: 30%;
 						padding: 10px 0 10px 20px;
 					}
-					ul.product_list_widget {
-						position: relative;
-						left: 0;
-						top: 0;
-						height: auto;
+					.textwidget {
 						display: inline-block;
 						vertical-align: middle;
 						width: 70%;
 						padding: 10px 15px;
-						> li {
+						ul.products {
 							position: relative;
-							display: inline-block;
-							text-align: center;
-							text-transform: uppercase;
-							width: 47%;
-							max-width: 197px;
-							padding: 0 0 10px;
-							margin-right: 6%;
-							&:last-child {
-								margin-right: 0;
-							}
-							&:before {
-								content: "";
-								position: absolute;
-								top: 0;
-								left: 0;
-								width: 100%;
-								height: 197px;
-								display: block;
-								background: rgba(0,0,0,0.5);
-								opacity: 0;
-								@include transition(all .3s ease);
-							}
-							&:after {
-								content: "";
-								position: absolute;
-								bottom: 0;
-								left: 0;
-								width: 100%;
-								height: 80px;
-								display: block;
-								background: #363636;
-								z-index: -1;
-							}
-							> a {
-								display: block;
-								margin: 0;
-								padding: 0;
-								&:before {
-									font-family: FontAwesome;
-									content: "\f178";
-									color: $primary_color;
-									background: #fff;
-									position: absolute;
-									top: 80px;
-									left: 50%;
-									width: 40px;
-									height: 40px;
-									line-height: 40px;
-									text-align: center;
-									opacity: 0;
-									@include border-radius(50%);
-									@include transition(all .3s ease);
-									@include transform( translateX(-50%) scale(0.8) );
-								}
-								> img {
-									width: 100%;
-									height: auto;
-									float: none;
+							left: 0;
+							top: 0;
+							width: 100%;
+							height: auto;
+							> div.product {
+								width: 48%;
+								margin-right: 4%;
+								&:last-child {
 									margin: 0;
 								}
-								.product-title {
-									display: block;
-									font-size: 13px;
-									font-weight: 700;
-									letter-spacing: 0.2em;
-									color: #ffffff;
-									margin: 10px 0 0;
-									@include transition(all .3s);
-									&:hover {
-										color: $primary_color;
-									}
-								}
-							}
-							> span.amount {
-								font-size: 14px;
-								font-weight: 700;
-								color: $primary_color !important;
-							}
-							> del {
-								color: #ffffff;
-								opacity: 1;
-								> span {
-									font-size: 12px;
-									font-weight: 700;
-									color: #ffffff !important;
-								}
-							}
-							> ins {
-								text-decoration: none;
-								> span {
-									color: $primary_color !important;
-								}
-							}
-							&:hover {
-								&:before {
-									opacity: 1;
-								}
-								> a {
-									&:before {
-										opacity: 1;
-										@include transform( translateX(-50%) scale(1) );
+								.tb-product-teaser {
+									margin: 0;
+									.tb-product-header {
+										.tb-product-image {
+											> a {
+												padding: 0;
+											}
+										}
+										.tb-product-overlay {
+											padding: 10px;
+											.tb-product-title {
+												> a {
+													padding: 0;
+												}
+											}
+											.woocommerce-review-link {
+												display: none;
+											}
+										}
+										.tb-product-overlay-outer {
+											.tb-actions {
+												.tb_meta_top {
+													.yith-wcwl-add-to-wishlist {
+														font-size: 14px;
+													}
+													a.compare, a.yith-wcqv-button {
+														font-size: 14px;
+														border: 1px solid #ffffff;
+														line-height: 40px;
+														padding: 0;
+														&:hover {
+															background: $primary_color;
+															border-color: $primary_color;
+														}
+													}
+												}
+												.tb_meta_bottom {
+													.tb-add-to-cart {
+														a.add_to_cart_button {
+															font-size: 13px;
+															line-height: 13px;
+															color: $primary_color;
+															padding: 14px 25px;
+															border: 1px solid $primary_color;
+															&:hover, &:focus, &:active {
+																color: #ffffff;
+															}
+															&.product_type_variable {
+																padding: 14px 8px;
+															}
+														}
+													}
+												}
+											}
+										}
 									}
 								}
 							}
 						}
 					}
+					
 				}
 			}
 		}
@@ -436,63 +397,6 @@ Menu Default
         .menu-main-menu li.has_full_width {
             position: inherit;
         }
-		/*.menu-main-menu > li.menu-item-has-children ul.sub-menu:not(.multicolumn){
-			padding-top: 30px;
-			padding-bottom: 50px;
-			min-width: 275px;
-			> li > a{
-				padding-left: 40px;
-				padding-right: 30px;
-			}
-		}
-        .menu-main-menu li:not(.group) > ul.drop_full_width.sub-menu {
-            left: 0 !important;
-            width: 100% !important;
-            background: #ffffff;
-            padding: 60px 100px 80px;
-			ul.sub-menu:not(.multicolumn){
-				padding-top: 0;
-				padding-bottom: 0;
-				min-width: 200px;
-				padding-right: 20px;
-			}
-            > li.menu-item-has-children {
-                a {
-                    padding: 0;
-                    line-height: 40px;
-                }
-                > a {
-                    color: #FFF;
-                    padding-bottom: 20px;
-                    margin-bottom: 16px;
-                    position: relative;
-                    font-weight: bold;
-                    font-size: 12px;
-                    line-height: normal;
-                    &:after {
-                        content: '';
-                        position: absolute;
-                        width: 23px;
-                        height: 3px;
-                        background-color: $primary_color;
-                        bottom: 0;
-                        left: 0;
-                    }
-                }
-            }
-            .sub-menu {
-                background-color: transparent;
-            }
-        }
-        li.group > ul.sub-menu {
-            display: block;
-            float: left;
-            left: 0;
-            position: relative;
-            width: 100%;
-            height: inherit;
-            padding: 0;
-        }*/
         li.title-hide .menu-title { display: none; }
         .widget {
             line-height: 30px;
@@ -526,7 +430,7 @@ Menu Default
 			h3.wg-title {
 				width: 19%;
 			}
-			ul.product_list_widget {
+			.textwidget {
 				width: 81%;
 			}
 		}
@@ -577,7 +481,7 @@ Menu Default
         padding: 0;
         list-style: none;
         overflow: hidden;
-        transition: all 500ms ease;
+        @include transition(all .4s ease);
         li {
             list-style: none;
             a {
@@ -647,7 +551,7 @@ Menu Default
             max-height: 0;
             overflow: hidden;
             padding-left: 10px;
-            @include transition(max-height 600ms linear 0ms);
+            @include transition(all .4s ease);
             &.submenu-open {
                 max-height: 1000px;
                 + .tb-menu-toggle i {
@@ -665,6 +569,20 @@ Menu Default
 /*
 -----> End Max width of 992 pixels.
 */
+
+#tb-header-navigation .main-navigation .menu-main-menu > li ul li:hover > a,
+#tb-header-navigation .main-navigation .menu-main-menu > li ul li:hover .tb-menu-toggle,
+#tb-header-navigation .main-navigation .menu-main-menu > li ul a:focus,
+#tb-header-navigation .main-navigation .menu-main-menu > li ul li.current-menu-item > a,
+#tb-header-navigation .main-navigation .menu-main-menu > ul > li ul li:hover a,
+#tb-header-navigation .main-navigation .menu-main-menu > ul > li ul a:focus,
+#tb-header-navigation .main-navigation .menu-main-menu > ul > li ul li.current-menu-item > a,
+#tb-header-navigation .main-navigation .menu-main-menu > li ul li.current-menu-parent > a,
+#tb-header-navigation .main-navigation .menu-main-menu > li ul li.current-menu-parent > .tb-menu-toggle,
+#tb-header-navigation .main-navigation .menu-main-menu > li ul li.current-menu-ancestor > a,
+#tb-header-navigation .main-navigation .menu-main-menu > li ul li.current-menu-ancestor > .tb-menu-toggle {
+	color: $primary_color;
+}
 
 /* ==========================================================================
   End Style Main Menu

@@ -1,7 +1,10 @@
 @media screen and (min-width: 1200px) {
     body .tb-boxed {
-        margin: auto;
+        margin: 0 auto !important;
         width: 1200px;
+		-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+		overflow: hidden;
     }	
     .tb-row-full-width > .container-fluid {
         padding-left: 0;
@@ -57,7 +60,6 @@
             z-index: 99;
         }
         #tb-header-logo a {
-            line-height: 80px;
             img {
                 max-height: 55px;
             }
@@ -78,11 +80,8 @@
     }
     /* Fixed Mobile */
     body, body.fixed-margin-top {
-        margin-top: 80px;
+        margin-top: 120px;
     } 
-    body.fixed-margin-top #tb-header.header-fixed #tb-header-navigation .main-navigation .menu-main-menu > li {
-        line-height: normal;
-    }
     /* ==========================================================================
        End Header Mobile
     ========================================================================== */
@@ -112,7 +111,7 @@
         position: fixed;
     }
     /* Footer Top */
-    #tb-footer-top [class*="col-"]:nth-child(2n+1) {
+    #tb-footer-top [class*="col-"]:nth-child(3) {
         clear: left;
     }
     #tb-footer-top {
@@ -296,9 +295,13 @@
     /* Sidebar
     =================*/
     #secondary {
-        margin-top: 50px;
+		max-width: 360px;
+		margin: 60px auto 0 auto;
     }
-
+	.tb-testimonial-section {
+		max-width: 390px;
+		margin: auto;
+	}
 }
 @media screen and (max-width: 640px) {
     /* Footer Scroll Top */

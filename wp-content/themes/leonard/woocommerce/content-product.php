@@ -15,57 +15,42 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $product, $woocommerce_loop;
 
 // Store loop count we're currently on
-if ( empty( $woocommerce_loop['loop'] ) ) {
-	$woocommerce_loop['loop'] = 0;
-}
-// Store column count for displaying the grid
-if ( empty( $woocommerce_loop['columns'] ) ) {
-	$woocommerce_loop['columns'] = apply_filters( 'loop_shop_columns', 3 );
-}
-$term_id = 0;
-if(is_product_category()):
-	$product_cat = get_query_var('product_cat');
-	if($product_cat):
-		$current_term = get_term_by('slug', $product_cat, 'product_cat');
-		$term_id = $current_term->term_id;
-	endif;
-endif;
-if(isset($_COOKIE["loop_shop_columns_".$term_id])) {
-    $woocommerce_loop['columns'] = $_COOKIE["loop_shop_columns_".$term_id];
-}
+if ( empty( $woocommerce_loop['loop'] ) )
+	$woocommerce_loop['loop'] = 0; 
+
 // Ensure visibility
-if ( ! $product || ! $product->is_visible() ) {
+if ( ! $product || ! $product->is_visible() )
 	return;
-}
 
 // Increase loop count
 $woocommerce_loop['loop']++;
 
-// Extra post classes
-$classes = array();
-if ( 0 == ( $woocommerce_loop['loop'] - 1 ) % $woocommerce_loop['columns'] || 1 == $woocommerce_loop['columns'] ) {
-	$classes[] = 'first';
+//$loop_shop_columns = get_option('loop_shop_columns');
+if  (isset($_GET['tb_layout'])) :
+	$loop_shop_columns = $_GET['tb_layout'];
+else:
+	$loop_shop_columns = 3;
+endif;
+
+if($loop_shop_columns){
+	$woocommerce_loop['columns'] = $loop_shop_columns; 
 }
-if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
-	$classes[] = 'last';
+
+if ( 0 == ( $woocommerce_loop['loop'] - 1 ) % $woocommerce_loop['columns'] || 1 == $woocommerce_loop['columns'] ){
+    $classes[] = 'first';
 }
-switch ($woocommerce_loop['columns']) {
-    case 1:
-        $classes[] = 'list-item';
-        break;
-    case 2:
-        $classes[] = 'grid-item';
-        break;
-    case 3:
-        $classes[] = 'grid-item';
-        break;
-    case 3:
-        $classes[] = 'grid-item';
-        break;
-    default:
-        $classes[] = 'grid-item';
-        break;
+
+if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ){
+    $classes[] = 'last';
 }
+
+if($woocommerce_loop['columns'] == 1){
+	$classes[] = 'list-item';
+}
+if($woocommerce_loop['columns'] == 3){
+	$classes[] = 'grid-item';
+}
+
 ?>
 <div <?php post_class( $classes ); ?>>
     <div class="tb-product-teaser">
@@ -97,12 +82,14 @@ switch ($woocommerce_loop['columns']) {
 			<div class="tb-product-overlay-outer">
 				<div class="tb-actions">
 					<div class="tb_meta_top">
-					<?php echo do_shortcode('[yith_wcwl_add_to_wishlist]'); ?>
-					<?php tb_add_compare_link(); ?>
-					<a class="btn" href="<?php the_permalink() ?>"><i class="fa fa-search"></i></a>
+						<?php 
+							echo do_shortcode('[yith_wcwl_add_to_wishlist]');
+							tb_add_compare_link();
+							tb_add_quick_view_button();
+						?>
 					</div>
 					<div class="tb_meta_bottom">
-						<?php wc_get_template( 'loop/add-to-cart.php' );;?>
+						<?php wc_get_template( 'loop/add-to-cart.php' ); ?>
 					</div>
 				</div>
 			</div>

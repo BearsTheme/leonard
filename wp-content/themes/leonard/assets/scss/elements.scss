@@ -92,7 +92,7 @@
 
 blockquote {
     border-left: 5px solid $primary_color;
-    padding-left: 10px;
+    padding-left: 20px;
 }
 
 dl {
@@ -444,9 +444,11 @@ $message-red-light : #fff0ec;
 			}
 		}
 		.owl-item{
-			background: #FFF;
 			position: relative;
 			.tb-product {
+				position: relative;
+				max-width: 360px;
+				margin: auto;
 				.tb-product-image {
 					> img{
 						max-width: 100%;
@@ -487,7 +489,7 @@ $message-red-light : #fff0ec;
 					height: 100%;
 					text-align: center;
 					@include background-opacity(#000,0.8);
-					@include transition(all .3s ease);
+					@include transition(all .4s ease);
 					transform: scale(.8);
 					-webkit-transform: scale(.8);
 					opacity: 0;
@@ -501,7 +503,7 @@ $message-red-light : #fff0ec;
 							color: #FFF;
 							margin-bottom: 20px;
 							.yith-wcwl-add-to-wishlist {
-								@include transition(all .3s ease);
+								@include transition(all .4s ease);
 								position: relative;
 								display: inline-block;
 								vertical-align: middle;
@@ -522,7 +524,7 @@ $message-red-light : #fff0ec;
 								}
 								.yith-wcwl-add-button {
 									&:before {
-										@include transition(all .3s ease);
+										@include transition(all .4s ease);
 										font-family: FontAwesome;
 										content: "\f004";
 										color: #ffffff;
@@ -550,7 +552,7 @@ $message-red-light : #fff0ec;
 										opacity: 0;
 									}
 									&:before {
-										@include transition(all .3s ease);
+										@include transition(all .4s ease);
 										font-family: FontAwesome;
 										content: "\f064";
 										color: #ffffff;
@@ -583,12 +585,13 @@ $message-red-light : #fff0ec;
 								line-height: 40px;
 								display: inline-block;
 								vertical-align: middle;
-								color: #FFF;		
-								border: 1px solid #FFF;
+								color: #ffffff;		
+								border: 1px solid #ffffff;
 								text-align: center;
 								padding: 0;
 								margin-left: 20px;
 								&:hover {
+									background: $primary_color;
 									border-color: $primary_color;
 								}
 							}
@@ -619,6 +622,9 @@ $message-red-light : #fff0ec;
 								color: $primary_color;
 								padding: 14px 25px;
 								border: 1px solid $primary_color;
+								&.product_type_variable {
+									padding: 14px 10px;
+								}
 								&:hover, &:focus, &:active {
 									color: #ffffff;
 									background: $primary_color;
@@ -673,18 +679,17 @@ $message-red-light : #fff0ec;
 							.amount{
 								color: $primary-color;
 								font-size: 14px;
-								font-weight: bold;
+								font-weight: 700;
 							}
 							> del {
 								font-size: 12px;
 								font-weight: 300;
-								color: #e1e1e1;
+								color: #ffffff;
 								margin-right: 10px;
-								opacity: 1;
 								> span.amount {
 									font-size: 12px;
 									font-weight: 300;
-									color: #e1e1e1;
+									color: #ffffff;
 								}
 							}
 							> ins {
@@ -693,22 +698,14 @@ $message-red-light : #fff0ec;
 								text-decoration: none;
 							}
 						}
-						.price {
-							font-size: 13px;
-							line-height: 27px;
-							margin: 0;
-							> del {
-								color: #fff;
-								font-weight: 100;
-								margin-right: 10px;
-							}
-							> ins {
-								color: $primary-color;
-								font-weight: 700;
-								text-decoration: none;
-							}
-						}
 					}
+				}
+				&:hover{
+					.tb-product-overlay-outer{
+						transform: scale(1);
+						-webkit-transform: scale(1);
+						opacity: 1;
+					}		
 				}
 			}
 			.woocommerce{
@@ -721,6 +718,7 @@ $message-red-light : #fff0ec;
 					.woocommerce-product-rating{						
 						direction: ltr;
 						position: relative;
+						font-size: 11px;
 						display: inline-block;
 						vertical-align: middle;
 						width: calc(40% - 2px);
@@ -732,9 +730,6 @@ $message-red-light : #fff0ec;
 							top: 50%;
 							transform: translateY(-50%);
 							-webkit-transform: translateY(-50%);
-							&:before{
-								color: #FFF;
-							}
 							span::before{
 								color: $primary-color;
 							}
@@ -770,15 +765,6 @@ $message-red-light : #fff0ec;
 					}
 				}
 			}
-			&:hover{
-				.tb-product {
-					.tb-product-overlay-outer{
-						transform: scale(1);
-						-webkit-transform: scale(1);
-						opacity: 1;
-					}
-				}			
-			}
 		}
 		.owl-nav {
 			text-align: left;
@@ -801,7 +787,7 @@ $message-red-light : #fff0ec;
 				@include border-radius(0);
 				/*@include transform(translate(-50%, -50%));*/
 				&.owl-prev {
-					@include transition(all .3s ease);
+					@include transition(all .4s ease);
 					left: -80px;
 					background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
 					border: medium none;
@@ -814,7 +800,7 @@ $message-red-light : #fff0ec;
 					}
 				}
 				&.owl-next {
-					@include transition(all .3s ease);
+					@include transition(all .4s ease);
 					right: -80px;
 					background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
 					border: medium none;
@@ -837,39 +823,16 @@ $message-red-light : #fff0ec;
 .tb-fancyboxes-wraper{
 	&.template-tb_fancybox_single--polygon{
 		position: relative;
+		max-width: 360px;
+		margin: auto;
 		padding: 30px;
-		&:before {
-			content: "";
-			position: absolute;
-			top: -5px;
-			left: -5px;
-			width: calc(100% + 10px);
-			height: calc(100% + 10px);
-			border: 2px solid $primary_color;
-			opacity: 0;
-			@include border-radius(3px);
-			@include transition(all .3s ease);
-			@include transform( scale(0.8) );
-		}
-		&:after {
-			content: "";
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			border: 1px solid $primary_color;
-			opacity: 0;
-			@include border-radius(3px);
-			@include transition(all .3s ease);
-			@include transform( scale(0.8) );
-		}
 		.polygon-icon{
 			overflow: hidden;
 			display: inline-block;
 			position: relative;
+			@include transition(all .4s ease);
 			&:after{
-				background: #FFF;
+				background: #ffffff;
 			    content: "";
 			    height: 100px;
 			    position: absolute;
@@ -883,7 +846,7 @@ $message-red-light : #fff0ec;
 			i{
 				z-index: 2;
 				font-size: 37px;
-				color: #FFF;
+				color: #ffffff;
 				position: absolute;
 				left: 50%;
 				top: 50%;
@@ -912,9 +875,9 @@ $message-red-light : #fff0ec;
 			}
 		}
 		&:hover {
-			&:before, &:after {
-				opacity: 1;
-				@include transform( scale(1) );
+			.polygon-icon{
+				-webkit-animation: rubberBand 1s both;
+				animation: rubberBand 1s both;
 			}
 		}
 	}

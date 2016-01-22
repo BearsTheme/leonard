@@ -39,7 +39,7 @@ body {
 a, a:hover, a:focus {
     outline: none;
     text-decoration: none;
-    @include transition(all 300ms linear 0ms);
+    @include transition(all .4s ease);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -390,6 +390,21 @@ body .wpb_button {
 .bt-banner-promotion {
 	> .vc_column-inner > .wpb_wrapper {
 		position: relative;
+		@media screen and (max-width: 767px) {
+			max-width: 360px;
+			margin: auto;
+		}
+		.wpb_single_image .vc_figure, .wpb_single_image .vc_single_image-wrapper {
+			display: block;
+			> img {
+				width: 100%;
+			}
+		}
+		@media screen and (max-width: 1199px) {
+			.bt-banner-promotion {
+				margin-bottom: 30px;
+			}
+		}
 		&:before {
 			content: "";
 			position: absolute;
@@ -399,13 +414,28 @@ body .wpb_button {
 			height: 100%;
 			background: rgba(0,0,0,0.8);
 			opacity: 0;
-			@include transition(all .3s ease);
+			@include transition(all .4s ease);
 			@include transform(scale(0.8));
 		}
 		&:hover {
+			.tb-polygon {
+				-webkit-animation: rubberBand 1s both;
+				animation: rubberBand 1s both;
+			}
 			&:before {
 				opacity: 1;
 				@include transform(scale(1));
+			}
+			.tb-info-men, .tb-info-women, .tb-info-accesories {
+				.tb-title > a {
+					background: rgba(255, 255, 255, 0.2);
+					padding: 0 10px 0 15px;
+					border-color: $primary_color;
+					border-color: $primary_color;
+					&:before, &:after {
+						width: 2px;
+					}
+				}
 			}
 		}
 	}
@@ -505,7 +535,6 @@ body .wpb_button {
 				}
 			}
 		}
-		
 	}
 }
 .tb-info-men {

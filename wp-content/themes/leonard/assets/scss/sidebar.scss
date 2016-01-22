@@ -55,7 +55,7 @@
 						left: 0;
 						top: 50%;
 						color: #b7b7b7;
-						@include transition(all 0.4s ease 0s);
+						@include transition(all .4s ease);
 						@include transform(translateY(-50%));
 					}
 					&:hover, &.chosen, &.current-cat {
@@ -109,7 +109,7 @@
 					height: 70px;
 					background: rgba(0,0,0,0.8);
 					opacity: 0;
-					@include transition(all 0.4s ease 0s);
+					@include transition(all .4s ease);
 					@include transform(scale(0.8));
 				}
 				&:hover {
@@ -143,6 +143,9 @@
 }
 /* Sidebar End Content */
 .tb-sidebar-end-content-wrap{
+	.archive &, .single & {
+		margin-top: 50px;
+	}
 	.tb-client-logo {
 		background-color: $tertiary_color;
 		padding: 25px 0;

@@ -72,7 +72,7 @@ $products = new WP_Query($args);
 if ($products->have_posts()) :
     ?>
     <div id="tb_carousel_product<?php echo esc_attr($date); ?>" class="clear tb-related-products">
-		<h2><?php _e('Related products', 'wocommerce'); ?></h2>
+		<h2 class="tb_extra_font1"><?php _e('Interested products', 'wocommerce'); ?></h2>
         <div class="tb-content-related-items">
             <div class="tb-carousel-list">
                 <div id="related-product-carousel" class="tb-carousel">
@@ -119,9 +119,11 @@ if ($products->have_posts()) :
 									<div class="tb-product-overlay-outer">
 										<div class="tb-actions">
 											<div class="tb_meta_top">
-											<?php echo do_shortcode('[yith_wcwl_add_to_wishlist]'); ?>
-											<?php tb_add_compare_link(); ?>
-											<a class="btn" href="<?php the_permalink() ?>"><i class="fa fa-search"></i></a>
+												<?php 
+													echo do_shortcode('[yith_wcwl_add_to_wishlist]');
+													tb_add_compare_link(); 
+													tb_add_quick_view_button();
+												?>
 											</div>
 											<div class="tb_meta_bottom">
 												<?php wc_get_template( 'loop/add-to-cart.php' );;?>

@@ -75,9 +75,11 @@ $atts['categories'] = $_category;
 						<div class="tb-product-overlay-outer">
 							<div class="tb-actions">
 								<div class="tb_meta_top">
-								<?php echo do_shortcode('[yith_wcwl_add_to_wishlist]'); ?>
-								<?php tb_add_compare_link(); ?>
-								<a class="btn" href="<?php the_permalink() ?>"><i class="fa fa-search"></i></a>
+									<?php 
+										echo do_shortcode('[yith_wcwl_add_to_wishlist]');
+										tb_add_compare_link(); 
+										tb_add_quick_view_button();
+									?>
 								</div>
 								<div class="tb_meta_bottom">
 									<?php wc_get_template( 'loop/add-to-cart.php' );;?>

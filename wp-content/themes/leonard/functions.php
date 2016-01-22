@@ -276,6 +276,14 @@ function tb_scripts_styles() {
     /* Fancy box */
     wp_register_script('tbtheme-fancybox', get_template_directory_uri() . '/assets/libs/fancybox/jquery.fancybox.pack.js', array( 'jquery' ), '2.1.5', true);
     wp_register_style('tbtheme-fancybox', get_template_directory_uri() . '/assets/libs/fancybox/jquery.fancybox.css');
+	/* Elevatezoom Master */
+	wp_enqueue_script( 'tbtheme-elevatezoom', get_template_directory_uri() . '/assets/libs/elevatezoom-master/jquery.elevatezoom.js', array('jquery'), '', true );
+	/* Nice scroll */
+	wp_register_script('tbtheme-nice-scroll', get_template_directory_uri() . '/assets/libs/nice-scroll/jquery.nicescroll.min.js', array( 'jquery' ), '3.0.6', true);
+    
+	/* Malihu custom scrollbar */
+	wp_register_script('tbtheme-malihu-custom-scrollbar', get_template_directory_uri() . '/assets/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js', array( 'jquery' ), '3.0.9', true);
+    wp_register_style('tbtheme-malihu-custom-scrollbar', get_template_directory_uri() . '/assets/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css');
     /* Slick Slider */
     wp_register_script('tb-slick-js', get_template_directory_uri(). '/assets/js/slick.min.js', array('jquery'), '1.5.7', true);
     wp_register_style('tb-slick-css', get_template_directory_uri(). '/assets/css/slick.css');
@@ -911,15 +919,28 @@ function tb_list_post_types() {
 /**
  * Add Fancybox into a post type
  */
- function tb_add_fancybox() {
-     if( is_singular('portfolio') ) {
-        wp_enqueue_script('tbtheme-fancybox');
-        wp_enqueue_style('tbtheme-fancybox');
-        wp_enqueue_script('tb-slick-js');
-        wp_enqueue_style('tb-slick-css');
-     }
- }
+function tb_add_fancybox() {
+	if( is_singular('portfolio') ) {
+		wp_enqueue_script('tbtheme-fancybox');
+		wp_enqueue_style('tbtheme-fancybox');
+		wp_enqueue_script('tb-slick-js');
+		wp_enqueue_style('tb-slick-css');
+	}
+}
 add_action( 'wp_enqueue_scripts', 'tb_add_fancybox' );
+
+/**
+ * Add Elevatezoom Master into a post type
+ */
+function tb_add_elevatezoom() {
+	if( is_singular('product') ) {
+		wp_enqueue_script('tbtheme-elevatezoom');
+		wp_enqueue_script('tbtheme-malihu-custom-scrollbar');
+		wp_enqueue_style('tbtheme-malihu-custom-scrollbar');
+		wp_enqueue_script('tbtheme-nice-scroll');
+	}
+}
+add_action( 'wp_enqueue_scripts', 'tb_add_elevatezoom' );
 
 /* Woo support */
 if(class_exists('Woocommerce')){

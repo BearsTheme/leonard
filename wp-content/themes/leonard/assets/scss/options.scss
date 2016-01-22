@@ -5,7 +5,7 @@ $link_color:#707070;
 $link_color_hover:#e54e5d;
 $header_height:80px;
 $main_logo_height:60px;
-$menu_sticky_height:100px;
+$menu_sticky_height:27px;
 $sticky_logo_height:80px;
 $menu_color_first_level:#ffffff;
 body.admin-bar #tb-header.tb-header-1 { margin-top: calc(0 + 32px );}#tb-header-logo a { line-height: $header_height; }#tb-header-logo a img { max-height: $main_logo_height; }#tb-header { background-color:0,0,0; }body.fixed-margin-top {  margin-top: $menu_sticky_height; }#tb-header.tb-main-header.header-fixed { background-color:0,0,0; }#tb-header.header-fixed #tb-header-logo a img { max-height: $sticky_logo_height; }#tb-header.header-fixed #tb-header-logo a,
@@ -45,18 +45,6 @@ body.admin-bar #tb-header.tb-header-1 { margin-top: calc(0 + 32px );}#tb-header-
 			}#tb-header-navigation .main-navigation .menu-main-menu > li ul li > a,
 			#tb-header-navigation .main-navigation .menu-main-menu > ul > li ul li .tb-menu-toggle {
 				color:#909090;
-			}#tb-header-navigation .main-navigation .menu-main-menu > li ul li:hover > a,
-			#tb-header-navigation .main-navigation .menu-main-menu > li ul li:hover .tb-menu-toggle,
-			#tb-header-navigation .main-navigation .menu-main-menu > li ul a:focus,
-			#tb-header-navigation .main-navigation .menu-main-menu > li ul li.current-menu-item > a,
-			#tb-header-navigation .main-navigation .menu-main-menu > ul > li ul li:hover a,
-			#tb-header-navigation .main-navigation .menu-main-menu > ul > li ul a:focus,
-			#tb-header-navigation .main-navigation .menu-main-menu > ul > li ul li.current-menu-item > a,
-			#tb-header-navigation .main-navigation .menu-main-menu > li ul li.current-menu-parent > a,
-			#tb-header-navigation .main-navigation .menu-main-menu > li ul li.current-menu-parent > .tb-menu-toggle,
-			#tb-header-navigation .main-navigation .menu-main-menu > li ul li.current-menu-ancestor > a,
-			#tb-header-navigation .main-navigation .menu-main-menu > li ul li.current-menu-ancestor > .tb-menu-toggle {
-				color:#e54e5d;
 			}#tb-footer-top .wg-title:before {
 				background-color:#ffffff;
 			}.vc_general.vc_btn3.btn , button.vc_general.vc_btn3, a.vc_general.vc_btn3, .btn, .button, input[type='submit'] {

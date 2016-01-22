@@ -215,7 +215,7 @@ function tb_get_post_like(){
     if(!$likes) $likes = 0;
 
     ?>
-    <span class="tb-post-like" data-id="<?php the_ID(); ?>"><i class="<?php echo !isset($_COOKIE['tb_post_like_'. get_the_ID()]) ? 'fa fa-heart-o' : 'fa fa-heart' ; ?>"></i><span><?php echo esc_attr($likes); ?></span></span>
+    <i class="<?php echo !isset($_COOKIE['tb_post_like_'. get_the_ID()]) ? 'fa fa-heart-o' : 'fa fa-heart' ; ?>"></i><span class="tb-post-like" data-id="<?php the_ID(); ?>"><?php echo esc_attr($likes); ?></span>
 <?php
 }
 
@@ -229,6 +229,7 @@ function tb_archive_detail(){
     ?>
     <div class="author vcard"><?php _e('By', 'leonard'); ?> <?php the_author_posts_link(); ?></div>
     <ul>
+        <li class="tb-blog-like"><?php echo tb_get_post_like(); ?></li>
         <li class="tb-blog-comment"><i class="fa fa-comments-o"></i><a href="<?php the_permalink(); ?>"><?php echo comments_number('0','1','%'); ?></a></li>
         <li class="tb-blog-views"><i class="fa fa-eye"></i> <?php echo tb_get_count_view(); ?></li>
         <?php if(has_category()): ?>
@@ -251,9 +252,9 @@ function tb_archive_detail_col_left(){
 			<span class="day"><?php echo get_the_date("d"); ?></span>
 			<span class="month"><?php echo get_the_date("M"); ?></span>
 		</li>
-        <li><i class="fa fa-facebook"></i><span><?php echo pssc_facebook( get_the_ID() ); ?></span></li>
-        <li><i class="fa fa-linkedin"></i><span><?php echo pssc_linkedin( get_the_ID() ); ?></span></li>
-        <li><i class="fa fa-google-plus"></i><span><?php echo pssc_gplus( get_the_ID() ); ?></span></li>
+        <li class="tb-blog-like"><?php echo tb_get_post_like(); ?></li>
+        <li class="tb-blog-comment"><i class="fa fa-comments-o"></i><span><a href="<?php the_permalink(); ?>"><?php echo comments_number('0','1','%'); ?></a></span></li>
+        <li class="tb-blog-views"><i class="fa fa-eye"></i><span><?php echo tb_get_count_view(); ?></span></li>
     </ul>
 <?php
 }
@@ -262,7 +263,12 @@ function tb_archive_detail_col_right(){
    
     <ul>
 		<li class="author vcard"><?php _e('By', 'leonard'); ?> <?php the_author_posts_link(); ?></li>
-        <li class="tb-blog-comment"><?php _e('Comment:', 'leonard'); ?> <a href="<?php the_permalink(); ?>"><?php echo comments_number('0','1','%'); ?></a></li>
+        <?php if(has_category()): ?>
+            <li class="tb-blog-category"><?php the_terms( get_the_ID(), 'category', 'Categories: ', ' / ' ); ?></li>
+        <?php endif; ?>
+        <?php if(has_tag()): ?>
+            <li class="tb-blog-tag"><?php the_tags('Tags: ', ' / ' ); ?></li>
+        <?php endif; ?>
     </ul>
 <?php
 }
@@ -455,7 +461,7 @@ function tb_social_share() {
     ?>
     <ul class="social-list">
         <li class="box"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo get_the_permalink(); ?>" onclick="javascript:void window.open(this.href,'','width=600,height=300,resizable=true,left=200px,top=200px');return false;"><i class="fa fa-facebook"></i></a></li>
-        <!--li class="box"><a href="https://twitter.com/intent/tweet?text=<?php echo get_the_title(); ?>&url=<?php echo get_the_permalink(); ?>" onclick="javascript:void window.open(this.href,'','width=600,height=300,resizable=true,left=200px,top=200px');return false;"><i class="fa fa-twitter"></i></a></li-->
+        <li class="box"><a href="https://twitter.com/intent/tweet?text=<?php echo get_the_title(); ?>&url=<?php echo get_the_permalink(); ?>" onclick="javascript:void window.open(this.href,'','width=600,height=300,resizable=true,left=200px,top=200px');return false;"><i class="fa fa-twitter"></i></a></li>
         <li class="box"><a href="https://www.linkedin.com/cws/share?url=<?php echo get_the_permalink(); ?>" onclick="javascript:void window.open(this.href,'','width=600,height=300,resizable=true,left=200px,top=200px');return false;"><i class="fa fa-linkedin"></i></a></li>
         <li class="box"><a href="https://plus.google.com/share?url=<?php echo get_the_permalink(); ?>" onclick="javascript:void window.open(this.href,'','width=600,height=300,resizable=true,left=200px,top=200px');return false;"><i class="fa fa-google-plus"></i></a></li>
     </ul>

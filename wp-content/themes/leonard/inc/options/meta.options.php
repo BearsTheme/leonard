@@ -58,36 +58,28 @@ class TBMetaOptions
                 ));
 				tb_options(array(
 					'id' => 'page_logo',
-					'label' => __('Logo page','luxary-resort'),
+					'label' => __('Logo page','leonard'),
+					'type' => 'image'
+				));
+				tb_options(array(
+					'id' => 'page_footer_logo',
+					'label' => __('Logo footer page','leonard'),
 					'type' => 'image'
 				));
 				tb_options(array(
 					'id' => 'presets_color',
-					'label' => __('Presets Color','appmove'),
-					'type' => 'imegesselect',
+					'label' => __('Presets Color','leonard'),
+					'type' => 'select',
 					'options' => array(
-						'' => THEMEURI.'/inc/options/images/presets/pr-c-1.jpg',
-						'1' => THEMEURI.'/inc/options/images/presets/pr-c-2.jpg',
-						'2' => THEMEURI.'/inc/options/images/presets/pr-c-3.jpg',
-						'3' => THEMEURI.'/inc/options/images/presets/pr-c-4.jpg',
-						'4' => THEMEURI.'/inc/options/images/presets/pr-c-5.jpg',
+						'' => 'Default',
+						'1' => 'Preset 1',
+						'2' => 'Preset 2',
+						'3' => 'Preset 3',
 					)
 				));
                 tb_options(array(
                     'id' => 'primary_color',
                     'label' => __('Primary Color', 'leonard'),
-                    'type' => 'color',
-                    'default' => ''
-                ));
-                tb_options(array(
-                    'id' => 'secondary_color',
-                    'label' => __('Secondary Color', 'leonard'),
-                    'type' => 'color',
-                    'default' => ''
-                ));
-                tb_options(array(
-                    'id' => 'tertiary_color',
-                    'label' => __('Tertiary Color', 'leonard'),
                     'type' => 'color',
                     'default' => ''
                 ));

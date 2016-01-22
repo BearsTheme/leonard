@@ -109,7 +109,7 @@ textarea:focus {
 		padding: 12px 15px;
 		border: 1px solid $primary_color;
 		@include border-radius(3px);
-		@include transition(all 0.4s ease 0s);
+		@include transition(all .4s ease);
 		&:hover {
 			background: #363636;
 			border-color: #363636;

@@ -36,7 +36,7 @@ jQuery(document).ready(function($) {
 		adminbar_height = adminbar.length > 0 ? adminbar.outerHeight(true) : 0 ;
 		
 		/* get top header menu */
-        header_top = header.offset().top;
+        header_top = $('#tb-header .tb-header-bottom-wrap').offset().top;
 		/* check sticky menu. */
 		if(TBOptions.menu_sticky == '1'){
 			tb_stiky_menu(scroll_top);
@@ -400,22 +400,22 @@ jQuery(document).ready(function($) {
         /**
          * Add Product Quantity Up Down icon
          */
-        /*$('form.cart .quantity').each(function() {
-            $(this).prepend('<span class="qty-minus"><i class="fa fa-minus"></i></span>');
+        $('div.quantity').each(function() {
+            $(this).append('<span class="qty-minus"><i class="fa fa-minus"></i></span>');
             $(this).append('<span class="qty-plus"><i class="fa fa-plus"></i></span>');
-        });*/
+        });
         /* Plus Qty */
-        /*$(document).on('click', '.qty-plus', function() {
+        $(document).on('click', '.qty-plus', function() {
             var parent = $(this).parent();
             $('input.qty', parent).val( parseInt($('input.qty', parent).val()) + 1);
-        })*/
+        })
         /* Minus Qty */
-        /*$(document).on('click', '.qty-minus', function() {
+        $(document).on('click', '.qty-minus', function() {
             var parent = $(this).parent();
             if( parseInt($('input.qty', parent).val()) > 1) {
                 $('input.qty', parent).val( parseInt($('input.qty', parent).val()) - 1);
             }
-        })*/
+        });
 		
         /**
          * Logo Custom Parallax
@@ -684,4 +684,36 @@ jQuery(document).ready(function($) {
 		/* call leonardSVG  */
 		leonardSVG.render();
 	} )
+	
+	function TbZoomImage() {
+		var $window = $(window);
+		$("#tb_zoom_image > img").elevateZoom({
+			zoomType: "lens",
+			responsive: true,
+			containLensZoom: true,
+			cursor: 'pointer',
+			gallery:'tb_gallery_0',
+			borderSize: 1,
+			borderColour: "#e54e5d",
+			galleryActiveClass: "tb-active",
+			loadingIcon: 'http://www.elevateweb.co.uk/spinner.gif'
+		});
+
+		$("#tb_zoom_image > img").on("click", function(e) {
+			var ez =   $('#tb_zoom_image > img').data('elevateZoom');
+				$.fancybox(ez.getGalleryList());
+			return false;
+		});
+	}
+	TbZoomImage();
+	
+	function TbMalihuCustomScrollbar() {
+		var $nice_scroll_class_js = $('.nice-scroll-class-js');
+		if($nice_scroll_class_js.length > 0){
+			$nice_scroll_class_js.each(function(){
+				$(this).niceScroll();
+			})
+		}
+	}
+	TbMalihuCustomScrollbar();
 });

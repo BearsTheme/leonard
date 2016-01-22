@@ -836,6 +836,16 @@ $this->sections[] = array(
             'title' => __('Enable Footer Top', 'leonard'),
             'default' => true,
         ),
+		array(
+            'title' => __('Select Logo', 'leonard'),
+            'subtitle' => __('Select an image file for your logo.', 'leonard'),
+            'id' => 'footer_logo',
+            'type' => 'media',
+            'url' => true,
+            'default' => array(
+                'url'=>get_template_directory_uri().'/logo-white.png'
+            )
+        ),
         array(
             'id'       => 'footer_background',
             'type'     => 'background',
@@ -1266,13 +1276,6 @@ $this->sections[] = array(
             'default' => '#909090'
         ),
         array(
-            'subtitle' => __('Controls the text hover color of sub level menu items.', 'leonard'),
-            'id' => 'menu_color_hover_sub_level',
-            'type' => 'color',
-            'title' => __('Menu Font Color Hover - Sub Level', 'leonard'),
-            'default' => '#e54e5d'
-        ),
-        array(
             'subtitle' => __('Controls the border color of sub level menu items.', 'leonard'),
             'id' => 'menu_item_border_color',
             'type' => 'color',
@@ -1370,18 +1373,6 @@ $this->sections[] = array(
             'output' => array('#tb-footer-top h1,#tb-footer-top h2,#tb-footer-top h3,#tb-footer-top h4,#tb-footer-top h5,#tb-footer-top h6'),
             'title' => __('Footer Heading Color', 'leonard'),
             'default' => '#ffffff'
-        ),
-        array(
-            'subtitle' => __('Set title link color footer top.', 'leonard'),
-            'id' => 'footer_top_link_color',
-            'type' => 'link_color',
-            'output' => array('#tb-footer-top a'),
-            'title' => __('Footer Link Color', 'leonard'),
-            'default' => '#636363',
-            'default' => array(
-				'regular'  => '#636363',
-				'hover'    => '#fcc403',
-			)
         ),
     )
 );

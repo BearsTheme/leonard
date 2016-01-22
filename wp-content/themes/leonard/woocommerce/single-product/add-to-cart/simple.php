@@ -41,11 +41,18 @@ if ( ! $product->is_purchasable() ) {
 	 				'max_value' => apply_filters( 'woocommerce_quantity_input_max', $product->backorders_allowed() ? '' : $product->get_stock_quantity(), $product )
 	 			) );
 	 	?>
+		
+		<?php 
+			echo do_shortcode('[yith_wcwl_add_to_wishlist]');
+			tb_add_compare_link();
+		?>
 
 	 	<input type="hidden" name="add-to-cart" value="<?php echo esc_attr( $product->id ); ?>" />
 
 	 	<button type="submit" class="single_add_to_cart_button btn alt"><?php echo ''.$product->single_add_to_cart_text(); ?></button>
-
+		
+		<?php echo do_action('woocommerce_template_single_sharing'); ?>
+		
 		<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
 	</form>
 

@@ -453,120 +453,122 @@
                         ), $wp_customize );
                     }
 
-                    foreach ( $section['fields'] as $skey => $option ) {
+					if(isset($section['fields'])) {
+						foreach ( $section['fields'] as $skey => $option ) {
 
-                        if ( isset( $option['customizer'] ) && $option['customizer'] === false ) {
-                            continue;
-                        }
+							if ( isset( $option['customizer'] ) && $option['customizer'] === false ) {
+								continue;
+							}
 
-                        if ( $this->parent->args['customizer'] === false && ( ! isset( $option['customizer'] ) || $option['customizer'] !== true ) ) {
-                            continue;
-                        }
+							if ( $this->parent->args['customizer'] === false && ( ! isset( $option['customizer'] ) || $option['customizer'] !== true ) ) {
+								continue;
+							}
 
-                        $this->options[ $option['id'] ] = $option;
-                        add_action( 'redux/advanced_customizer/control/render/' . $this->parent->args['opt_name'] . '-' . $option['id'], array(
-                            $this,
-                            'render'
-                        ) );
+							$this->options[ $option['id'] ] = $option;
+							add_action( 'redux/advanced_customizer/control/render/' . $this->parent->args['opt_name'] . '-' . $option['id'], array(
+								$this,
+								'render'
+							) );
 
-                        $option['permissions'] = isset( $option['permissions'] ) ? $option['permissions'] : 'edit_theme_options';
+							$option['permissions'] = isset( $option['permissions'] ) ? $option['permissions'] : 'edit_theme_options';
 
-                        //
-                        //if ( isset( $option['validate_callback'] ) && ! empty( $option['validate_callback'] ) ) {
-                        //    continue;
-                        //}
-
-
-                        //Change the item priority if not set
-                        if ( $option['type'] != 'heading' && ! isset( $option['priority'] ) ) {
-                            $option['priority'] = $order['option'];
-                            $order['option'] ++;
-                        }
-
-                        if ( ! empty( $this->options_defaults[ $option['id'] ] ) ) {
-                            $option['default'] = $this->options_defaults['option']['id'];
-                        }
-
-                        //$option['id'] = $this->parent->args['opt_name'].'['.$option['id'].']';
-                        //echo $option['id'];
-
-                        if ( ! isset( $option['default'] ) ) {
-                            $option['default'] = "";
-                        }
-                        if ( ! isset( $option['title'] ) ) {
-                            $option['title'] = "";
-                        }
+							//
+							//if ( isset( $option['validate_callback'] ) && ! empty( $option['validate_callback'] ) ) {
+							//    continue;
+							//}
 
 
-                        $option['id'] = $this->parent->args['opt_name'] . '[' . $option['id'] . ']';
+							//Change the item priority if not set
+							if ( $option['type'] != 'heading' && ! isset( $option['priority'] ) ) {
+								$option['priority'] = $order['option'];
+								$order['option'] ++;
+							}
 
-                        if ( $option['type'] != "heading" && $option['type'] != "import_export" && ! empty( $option['type'] ) ) {
+							if ( ! empty( $this->options_defaults[ $option['id'] ] ) ) {
+								$option['default'] = $this->options_defaults['option']['id'];
+							}
 
-                            $wp_customize->add_setting( $option['id'],
-                                array(
-                                    'default'           => $option['default'],
-                                    //'type'              => 'option',
-                                    //'capabilities'     => $option['permissions'],
-                                    //'capabilities'      => 'edit_theme_options',
-                                    //'capabilities'   => $this->parent->args['page_permissions'],
-                                    'transport'         => 'refresh',
-                                    'opt_name'    => $this->parent->args['opt_name'],
-                                    //'theme_supports'    => '',
-                                    //'sanitize_callback' => '__return_false',
-                                    'sanitize_callback' => array( $this, '_field_validation' ),
-                                    //'sanitize_js_callback' =>array( &$parent, '_field_input' ),
-                                )
-                            );
+							//$option['id'] = $this->parent->args['opt_name'].'['.$option['id'].']';
+							//echo $option['id'];
 
-                        }
-
-                        if ( ! empty( $option['data'] ) && empty( $option['options'] ) ) {
-                            if ( empty( $option['args'] ) ) {
-                                $option['args'] = array();
-                            }
-
-                            if ( $option['data'] == "elusive-icons" || $option['data'] == "elusive-icon" || $option['data'] == "elusive" ) {
-                                $icons_file = ReduxFramework::$_dir . 'inc/fields/select/elusive-icons.php';
-                                $icons_file = apply_filters( 'redux-font-icons-file', $icons_file );
-
-                                if ( file_exists( $icons_file ) ) {
-                                    require_once $icons_file;
-                                }
-                            }
-                            $option['options'] = $this->parent->get_wordpress_data( $option['data'], $option['args'] );
-                        }
-
-                        $class_name = 'Redux_Customizer_Control_' . $option['type'];
-
-                        do_action( 'redux/extension/customizer/control_init', $option );
-
-                        if ( ! class_exists( $class_name ) ) {
-                            continue;
-                        }
-
-                        $wp_customize->add_control( new $class_name( $wp_customize, $option['id'], array(
-                            'label'          => $option['title'],
-                            'section'        => $section['id'],
-                            'settings'       => $option['id'],
-                            'type'           => 'redux-' . $option['type'],
-                            'field'          => $option,
-                            'ReduxFramework' => $this->parent,
-                            'priority'       => $option['priority'],
-                        ) ) );
-
-                        $section['fields'][ $skey ]['name'] = $option['id'];
-                        if ( ! isset ( $section['fields'][ $skey ]['class'] ) ) { // No errors please
-                            $section['fields'][ $skey ]['class'] = "";
-                        }
-
-                        $this->controls[ $section['fields'][ $skey ]['id'] ] = $section['fields'][ $skey ];
-
-                        add_action( 'redux/advanced_customizer/render/' . $option['id'], array(
-                            $this,
-                            'field_render'
-                        ), $option['priority'] );
+							if ( ! isset( $option['default'] ) ) {
+								$option['default'] = "";
+							}
+							if ( ! isset( $option['title'] ) ) {
+								$option['title'] = "";
+							}
 
 
+							$option['id'] = $this->parent->args['opt_name'] . '[' . $option['id'] . ']';
+
+							if ( $option['type'] != "heading" && $option['type'] != "import_export" && ! empty( $option['type'] ) ) {
+
+								$wp_customize->add_setting( $option['id'],
+									array(
+										'default'           => $option['default'],
+										//'type'              => 'option',
+										//'capabilities'     => $option['permissions'],
+										//'capabilities'      => 'edit_theme_options',
+										//'capabilities'   => $this->parent->args['page_permissions'],
+										'transport'         => 'refresh',
+										'opt_name'    => $this->parent->args['opt_name'],
+										//'theme_supports'    => '',
+										//'sanitize_callback' => '__return_false',
+										'sanitize_callback' => array( $this, '_field_validation' ),
+										//'sanitize_js_callback' =>array( &$parent, '_field_input' ),
+									)
+								);
+
+							}
+
+							if ( ! empty( $option['data'] ) && empty( $option['options'] ) ) {
+								if ( empty( $option['args'] ) ) {
+									$option['args'] = array();
+								}
+
+								if ( $option['data'] == "elusive-icons" || $option['data'] == "elusive-icon" || $option['data'] == "elusive" ) {
+									$icons_file = ReduxFramework::$_dir . 'inc/fields/select/elusive-icons.php';
+									$icons_file = apply_filters( 'redux-font-icons-file', $icons_file );
+
+									if ( file_exists( $icons_file ) ) {
+										require_once $icons_file;
+									}
+								}
+								$option['options'] = $this->parent->get_wordpress_data( $option['data'], $option['args'] );
+							}
+
+							$class_name = 'Redux_Customizer_Control_' . $option['type'];
+
+							do_action( 'redux/extension/customizer/control_init', $option );
+
+							if ( ! class_exists( $class_name ) ) {
+								continue;
+							}
+
+							$wp_customize->add_control( new $class_name( $wp_customize, $option['id'], array(
+								'label'          => $option['title'],
+								'section'        => $section['id'],
+								'settings'       => $option['id'],
+								'type'           => 'redux-' . $option['type'],
+								'field'          => $option,
+								'ReduxFramework' => $this->parent,
+								'priority'       => $option['priority'],
+							) ) );
+
+							$section['fields'][ $skey ]['name'] = $option['id'];
+							if ( ! isset ( $section['fields'][ $skey ]['class'] ) ) { // No errors please
+								$section['fields'][ $skey ]['class'] = "";
+							}
+
+							$this->controls[ $section['fields'][ $skey ]['id'] ] = $section['fields'][ $skey ];
+
+							add_action( 'redux/advanced_customizer/render/' . $option['id'], array(
+								$this,
+								'field_render'
+							), $option['priority'] );
+
+
+						}
                     }
                 }
 

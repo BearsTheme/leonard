@@ -101,9 +101,7 @@ class Themebears_StaticCss
 		$primary_color = isset($tb_options['primary_color'])?$tb_options['primary_color']:'#e54e5d';
 		$primary_color = ( isset($tb_meta->_tb_primary_color) && !empty($tb_meta->_tb_primary_color) ) ? $tb_meta->_tb_primary_color : $primary_color;
 		$secondary_color = isset($tb_options['secondary_color'])?$tb_options['secondary_color']:'#cd3342';
-		$secondary_color = ( isset($tb_meta->_tb_secondary_colorr) && !empty($tb_meta->_tb_secondary_color) ) ? $tb_meta->_tb_secondary_color : $secondary_color;
 		$tertiary_color = isset($tb_options['tertiary_color'])?$tb_options['tertiary_color']:'#f5f8fa';
-		$tertiary_color = ( isset($tb_meta->_tb_tertiary_color) && !empty($tb_meta->_tb_tertiary_color) ) ? $tb_meta->_tb_tertiary_color : $tertiary_color;
 		tb_setvariablescss($primary_color,'$primary_color','#e54e5d');
 		tb_setvariablescss($secondary_color,'$secondary_color','#cd3342');
 		tb_setvariablescss($tertiary_color,'$tertiary_color','#f5f8fa');
@@ -228,21 +226,6 @@ class Themebears_StaticCss
             echo "#tb-header-navigation .main-navigation .menu-main-menu > li ul li > a,
 			#tb-header-navigation .main-navigation .menu-main-menu > ul > li ul li .tb-menu-toggle {
 				color:".esc_attr($tb_options['menu_color_sub_level']).";
-			}";
-        }
-        if(!empty($tb_options['menu_color_hover_sub_level'])){
-            echo "#tb-header-navigation .main-navigation .menu-main-menu > li ul li:hover > a,
-			#tb-header-navigation .main-navigation .menu-main-menu > li ul li:hover .tb-menu-toggle,
-			#tb-header-navigation .main-navigation .menu-main-menu > li ul a:focus,
-			#tb-header-navigation .main-navigation .menu-main-menu > li ul li.current-menu-item > a,
-			#tb-header-navigation .main-navigation .menu-main-menu > ul > li ul li:hover a,
-			#tb-header-navigation .main-navigation .menu-main-menu > ul > li ul a:focus,
-			#tb-header-navigation .main-navigation .menu-main-menu > ul > li ul li.current-menu-item > a,
-			#tb-header-navigation .main-navigation .menu-main-menu > li ul li.current-menu-parent > a,
-			#tb-header-navigation .main-navigation .menu-main-menu > li ul li.current-menu-parent > .tb-menu-toggle,
-			#tb-header-navigation .main-navigation .menu-main-menu > li ul li.current-menu-ancestor > a,
-			#tb-header-navigation .main-navigation .menu-main-menu > li ul li.current-menu-ancestor > .tb-menu-toggle {
-				color:".esc_attr($tb_options['menu_color_hover_sub_level']).";
 			}";
         }
         if(!empty($tb_options['menu_border_color_bottom'])){

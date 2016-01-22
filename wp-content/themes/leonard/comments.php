@@ -35,12 +35,12 @@ if ( post_password_required() ) {
 			<?php if($post_trackbacks || $post_pingbacks) : ?>
 			<h4 class="comments-title"><?php _e('Pingbacks And Trackbacks', 'leonard');?></h4>
 			<ol>
-			  <?php foreach ($comments as $comment) : ?>
-			  <?php $comment_type = get_comment_type(); ?>
-			  <?php if($comment_type != 'comment') { ?>
-			  <li><?php comment_author_link() ?></li>
-			  <?php } ?>
-			  <?php endforeach; ?>
+				<?php foreach ($comments as $comment) : ?>
+				<?php $comment_type = get_comment_type(); ?>
+				<?php if($comment_type != 'comment') { ?>
+				<li><?php comment_author_link() ?></li>
+				<?php } ?>
+				<?php endforeach; ?>
 			</ol>
 			<?php endif; ?>
 			<?php tb_comment_nav(); ?>

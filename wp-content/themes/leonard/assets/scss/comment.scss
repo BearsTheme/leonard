@@ -146,15 +146,15 @@
 				> input {
 					font-size: 13px;
 					font-weight: 700;
-					letter-spacing: 2px;
+					letter-spacing: 0.2em;
 					color: #ffffff;
 					background: $primary_color;
 					border: 1px solid $primary_color;
 					-webkit-border-radius: 3px;
 					border-radius: 3px;
 					&:hover {
-						color: $primary_color;
-						background: #ffffff;
+						background: #363636;
+						border-color: #363636;
 					}
 				}
             }

@@ -10,7 +10,7 @@ $preset-gray-color: #909090;
     outline: medium none;
     text-decoration: none;
     color: #333;
-    @include transition(all 300ms linear 0ms);
+    @include transition(all .4s ease);
     font-weight: 400;
 }
 
